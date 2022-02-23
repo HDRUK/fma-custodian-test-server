@@ -30,7 +30,7 @@ export const generateClientCredentials = async (req: Request, res: Response): Pr
 
         return res.status(200).send({ status: 'success', account });
     } catch (err) {
-        res.status(500).send({ status: 'error', message: 'Error generating client credentials' });
+        res.status(500).send({ status: 'error', message: (<Error>err).message });
     }
 };
 
