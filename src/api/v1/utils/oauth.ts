@@ -10,20 +10,26 @@ export const generateClientCredentials = async (req: Request, res: Response): Pr
     try {
         let { client_name = '', client_email = '' }: { client_name: string; client_email: string } = req.body;
 
-        const clientId = crypto.randomBytes(15).toString('hex').substring(15);
         const clientSecret = crypto.randomBytes(50).toString('hex').substring(50);
 
         const hashedClientSecret = await bcrypt.hash(clientSecret, 10);
 
-        const account = await CredentialsModel.create({
-            clientId: clientId,
-            clientSecret: hashedClientSecret,
-            clientName: client_name,
-            clientEmail: client_email,
-        });
+        const existingAccount = await CredentialsModel.findOne({ clientName: client_name }).lean();
+
+        let account;
+        if (existingAccount) {
+            account = await CredentialsModel.findOneAndUpdate({ _id: existingAccount._id }, { clientSecret: hashedClientSecret });
+        } else {
+            account = await CredentialsModel.create({
+                clientId: crypto.randomBytes(15).toString('hex').substring(15),
+                clientSecret: hashedClientSecret,
+                clientName: client_name,
+                clientEmail: client_email,
+            });
+        }
 
         if (!account) {
-            throw new Error('Error generating new client account');
+            throw new Error('Error generating or updating client account');
         }
 
         account.clientSecret = clientSecret;

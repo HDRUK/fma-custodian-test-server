@@ -1,6 +1,6 @@
-import authoriseJWT from './authoriseJWT';
+import authorise from './authorise';
 import validateParams from './validateParams';
 import oauthValidation from './oauthValidation';
 import clientValidation from './clientValidation';
 
-export { authoriseJWT, validateParams, clientValidation, oauthValidation };
+export { authorise, validateParams, clientValidation, oauthValidation };
