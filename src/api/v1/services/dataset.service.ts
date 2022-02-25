@@ -2,12 +2,20 @@ import { Datasets } from '../models/datasest.model';
 
 import { dataset } from '../types/dataset.interface';
 export default class DatasetService {
-    public async getDatasets(): Promise<dataset[]> {
-        const datasets = await Datasets.find({
-            status: 'active',
-        })
-            .select('datasetv2')
-            .lean();
+    public async getDatasets(q: string, offset: number, limit: number): Promise<dataset[]> {
+        let pipeline: Array<any> = [
+            {
+                $match: {
+                    ...(q && { $text: { $search: q } }),
+                    status: 'active',
+                },
+            },
+            { $skip: offset },
+        ];
+
+        if (limit) pipeline.push({ $limit: limit });
+
+        const datasets = await Datasets.aggregate(pipeline).exec();
 
         let mappedDatasets: dataset[] = await datasets.map((dataset) => {
             return {
@@ -29,5 +37,11 @@ export default class DatasetService {
         const dataset = await Datasets.findOne({ 'datasetv2.identifier': id }).select('datasetv2').lean();
 
         return dataset;
+    }
+
+    public async getDatasetCount() {
+        const count = await Datasets.count({ status: 'active' });
+
+        return count;
     }
 }

@@ -14,9 +14,14 @@ export default class DatasetController {
 
     public async getDatasets(req: Request, res: Response): Promise<any> {
         try {
-            const datasets = await this.datasetService.getDatasets();
+            const { q = '', offset = '0', limit }: { q: string; offset: string; limit: string } = <any>req.query;
 
-            return res.status(200).json({ status: 'success', datasets: datasets });
+            const datasets = await this.datasetService.getDatasets(q, parseInt(offset), parseInt(limit));
+            const datasetTotal = await this.datasetService.getDatasetCount();
+
+            return res
+                .status(200)
+                .json({ query: { q: q || '', total: String(datasetTotal), limit: limit || '', offset: offset }, items: datasets });
         } catch (err) {
             return res.status(500).json({ status: 'error', message: (<Error>err).message });
         }
