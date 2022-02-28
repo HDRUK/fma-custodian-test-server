@@ -1,4 +1,4 @@
-import { Datasets } from '../models/datasest.model';
+import { Datasets } from '../models/dataset.model';
 
 import { dataset } from '../types/dataset.interface';
 export default class DatasetService {
