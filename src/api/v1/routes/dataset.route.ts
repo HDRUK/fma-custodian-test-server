@@ -8,8 +8,12 @@ const router: Router = express.Router();
 const datasetService = new DatasetService();
 const datasetController = new DatasetController(datasetService);
 
-router.get('/datasets', authorise('user'), validateParams, datasetController.getDatasets);
+// No authorisation
+router.get('/noauth/datasets', validateParams, datasetController.getDatasets);
+router.get('/noauth/datasets/:id', datasetController.getDataset);
 
+// Protected endpoints - API key or OAuth access token
+router.get('/datasets', authorise('user'), validateParams, datasetController.getDatasets);
 router.get('/datasets/:id', authorise('user'), datasetController.getDataset);
 
 module.exports = router;
