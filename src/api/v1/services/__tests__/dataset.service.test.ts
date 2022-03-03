@@ -13,6 +13,7 @@ const datasetsStub = [
             updated: '2022-01-01T08:00:00.000+00:00',
         },
         datasetv2: {
+            '@schema': 'linkToSchema',
             identifier: 'testPersistentID_1',
             summary: {
                 title: 'testDataset_1',
@@ -35,6 +36,7 @@ const datasetsStub = [
             updated: '2022-01-01T08:00:00.000+00:00',
         },
         datasetv2: {
+            '@schema': 'linkToSchema',
             identifier: 'testPersistentID_2',
             summary: {
                 title: 'testDataset_2',
@@ -71,6 +73,7 @@ describe('CLASS: datasetService', () => {
 
             const expectedResponse = [
                 {
+                    '@schema': 'linkToSchema',
                     type: 'dataset',
                     identifier: 'testPersistentID_1',
                     name: 'testDataset_1',
@@ -81,6 +84,7 @@ describe('CLASS: datasetService', () => {
                     source: 'testPublisher',
                 },
                 {
+                    '@schema': 'linkToSchema',
                     type: 'dataset',
                     identifier: 'testPersistentID_2',
                     name: 'testDataset_2',
@@ -101,6 +105,7 @@ describe('CLASS: datasetService', () => {
 
             const expectedResponse = [
                 {
+                    '@schema': 'linkToSchema',
                     type: 'dataset',
                     identifier: 'testPersistentID_2',
                     name: 'testDataset_2',
@@ -121,6 +126,7 @@ describe('CLASS: datasetService', () => {
 
             const expectedResponse = [
                 {
+                    '@schema': 'linkToSchema',
                     type: 'dataset',
                     identifier: 'testPersistentID_1',
                     name: 'testDataset_1',
@@ -141,6 +147,7 @@ describe('CLASS: datasetService', () => {
 
             const expectedResponse = [
                 {
+                    '@schema': 'linkToSchema',
                     type: 'dataset',
                     identifier: 'testPersistentID_1',
                     name: 'testDataset_1',
@@ -162,6 +169,7 @@ describe('CLASS: datasetService', () => {
             const dataset = await datasetService.getDataset('testPersistentID_1');
 
             const expectedResponse = {
+                '@schema': 'linkToSchema',
                 identifier: 'testPersistentID_1',
                 summary: {
                     title: 'testDataset_1',

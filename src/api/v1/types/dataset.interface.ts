@@ -1,4 +1,5 @@
 export interface dataset {
+    '@schema': string;
     type: string;
     identifier: string;
     name: string;

@@ -1,3 +1,4 @@
+import { Schema } from 'mongoose';
 import { Datasets } from '../models/dataset.model';
 
 import { dataset } from '../types/dataset.interface';
@@ -19,6 +20,7 @@ export default class DatasetService {
 
         let mappedDatasets: dataset[] = await datasets.map((dataset) => {
             return {
+                '@schema': dataset.datasetv2['@schema'],
                 type: 'dataset',
                 identifier: dataset.datasetv2.identifier,
                 name: dataset.datasetv2.summary.title,
