@@ -1,10 +1,10 @@
-### Custodian test server
+## Custodian test server
 
 Example server matching the API specifications defined in https://editor.swagger.io/?url=https://raw.githubusercontent.com/HDRUK/schemata/fed-mdc-api/openapi/catalogue.yaml
 
-## Environment
+### Environment
 
-# .env file
+#### .env file
 
 ```
 PORT="<port>"
@@ -12,9 +12,9 @@ MONGO_URL="<URL to MongoDB instance>"
 JWT_SECRET="<JWT Secret Key>"
 ```
 
-## Endpoints
+### Endpoints
 
-# Datasets - no auth
+#### Datasets - no auth
 
 ```
 GET /api/v1/noauth/datasets?
@@ -59,7 +59,7 @@ GET /api/v1/noauth/datasets?q=covid&offset=0&limit=10
 }
 ```
 
-# Dataset - no auth
+#### Dataset - no auth
 
 ```
 GET /api/v1/noauth/datasets/[identifier]
@@ -77,7 +77,7 @@ Example 200 response:
 See above Swagger documentation.
 ```
 
-# Datasets - auth
+#### Datasets - auth
 
 ```
 GET /api/v1/datasets?
@@ -108,7 +108,7 @@ Example 200 response:
 As above.
 ```
 
-# Dataset - no auth
+#### Dataset - no auth
 
 ```
 GET /api/v1/noauth/datasets/[identifier]
@@ -134,7 +134,7 @@ Example 200 response:
 As above.
 ```
 
-# Access token
+#### Access token
 
 ```
 POST /api/v1/oauth/token
@@ -164,8 +164,8 @@ Example 200 response:
 }
 ```
 
-## Other responses
+### Other responses
 
-# Not found
+#### Not found
 
 404 - not found
