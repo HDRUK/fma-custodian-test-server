@@ -32,7 +32,7 @@ export default class DatasetController {
             const id: string = req.params.id;
             const dataset: any = await this.datasetService.getDataset(id);
 
-            return res.status(200).json({ status: 'success', dataset });
+            return res.status(200).json(dataset);
         } catch (err) {
             return res.status(500).json({ status: 'error', message: (<Error>err).message });
         }
