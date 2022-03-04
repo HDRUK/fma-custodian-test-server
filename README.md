@@ -28,6 +28,7 @@ Requires no authorisation/authentication. Returns a list of datasets according t
 
 200 - ok
 400 - invalid parameters
+500 - server error
 ```
 
 Example 200 response:
@@ -69,6 +70,7 @@ Requires no authorisation/authentication. Returns a single dataset conforming to
 # Responses
 
 200 - ok
+500 - server error
 ```
 
 Example 200 response:
@@ -99,6 +101,7 @@ CASE: Bearer token (OAuth 2.0)
 200 - ok
 400 - invalid parameters
 401 - unauthorised
+500 - server error
 
 ```
 
@@ -108,7 +111,7 @@ Example 200 response:
 As above.
 ```
 
-#### Dataset - no auth
+#### Dataset - auth
 
 ```
 GET /api/v1/noauth/datasets/[identifier]
@@ -126,6 +129,7 @@ CASE: Bearer token (OAuth 2.0)
 
 200 - ok
 401 - unauthorised
+500 - server error
 ```
 
 Example 200 response:
