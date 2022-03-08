@@ -1,7 +1,7 @@
-import { Schema } from 'mongoose';
 import { Datasets } from '../models/dataset.model';
 
 import { dataset } from '../types/dataset.interface';
+
 export default class DatasetService {
     public async getDatasets(q: string, offset: number, limit: number): Promise<dataset[]> {
         let pipeline: Array<any> = [
@@ -20,7 +20,7 @@ export default class DatasetService {
 
         let mappedDatasets: dataset[] = await datasets.map((dataset) => {
             return {
-                '@schema': dataset.datasetv2['@schema'],
+                '@schema': dataset.schema,
                 type: 'dataset',
                 identifier: dataset.datasetv2.identifier,
                 name: dataset.datasetv2.summary.title,
@@ -38,7 +38,7 @@ export default class DatasetService {
     public async getDataset(id: string) {
         const dataset = await Datasets.findOne({ 'datasetv2.identifier': id }).select('datasetv2').lean();
 
-        return dataset;
+        return dataset.datasetv2;
     }
 
     public async getDatasetCount() {

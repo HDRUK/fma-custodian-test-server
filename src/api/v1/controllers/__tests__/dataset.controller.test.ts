@@ -76,7 +76,7 @@ describe('CLASS: DatasetController', () => {
 
                 expect(getDatasetsStub.calledOnce).toBe(true);
                 expect(res.status).toHaveBeenCalledWith(200);
-                expect(res.json).toHaveBeenCalledWith({ status: 'success', dataset: {} });
+                expect(res.json).toHaveBeenCalledWith({});
             });
 
             it('TEST: it should call the service function and return a 500 response if rejected', async () => {

@@ -7,13 +7,13 @@ const database = new Database();
 
 const datasetsStub = [
     {
+        schema: 'linkToSchema',
         status: 'active',
         timestamps: {
             published: '2022-01-01T08:00:00.000+00:00',
             updated: '2022-01-01T08:00:00.000+00:00',
         },
         datasetv2: {
-            '@schema': 'linkToSchema',
             identifier: 'testPersistentID_1',
             summary: {
                 title: 'testDataset_1',
@@ -30,13 +30,13 @@ const datasetsStub = [
         },
     },
     {
+        schema: 'linkToSchema',
         status: 'active',
         timestamps: {
             published: '2022-01-01T08:00:00.000+00:00',
             updated: '2022-01-01T08:00:00.000+00:00',
         },
         datasetv2: {
-            '@schema': 'linkToSchema',
             identifier: 'testPersistentID_2',
             summary: {
                 title: 'testDataset_2',
@@ -169,7 +169,6 @@ describe('CLASS: datasetService', () => {
             const dataset = await datasetService.getDataset('testPersistentID_1');
 
             const expectedResponse = {
-                '@schema': 'linkToSchema',
                 identifier: 'testPersistentID_1',
                 summary: {
                     title: 'testDataset_1',
@@ -185,7 +184,7 @@ describe('CLASS: datasetService', () => {
                 modified: '2022-01-01T08:00:00.000+00:00',
             };
 
-            expect(dataset.datasetv2).toEqual(expectedResponse);
+            expect(dataset).toEqual(expectedResponse);
         });
     });
 
