@@ -8,7 +8,7 @@ Example server matching the API specifications defined in https://editor.swagger
 
 ```
 PORT="<port>"
-MONGO_URL="<URL to MongoDB instance>"
+MONGO_URI="<full URI for MongoDB database>"
 JWT_SECRET="<JWT Secret Key>"
 ```
 
