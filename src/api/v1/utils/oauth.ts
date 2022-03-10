@@ -8,7 +8,7 @@ import { CredentialsModel } from '../models/credentials.model';
 
 export const generateClientCredentials = async (req: Request, res: Response): Promise<any> => {
     try {
-        let { client_name = '', client_email = '' }: { client_name: string; client_email: string } = req.body;
+        const { client_name = '', client_email = '' }: { client_name: string; client_email: string } = req.body;
 
         const clientSecret = crypto.randomBytes(50).toString('hex').substring(50);
 

@@ -7,13 +7,13 @@ import { CredentialsModel } from '../models/credentials.model';
 
 const authorise = (clientType: string) => {
     return async (req: Request, res: Response, next: NextFunction) => {
-        let auth: any = req.headers['authorization'];
+        const auth: any = req.headers['authorization'];
         let token, apiKey;
 
         try {
             if (auth && auth.split(' ')[0] === 'Bearer') {
                 token = auth.split(' ')[1];
-            } else if (auth && auth.split(' ')[0] === 'Basic'! && auth.split(' ')[1].split(':').length === 2) {
+            } else if (auth && auth.split(' ')[0] === 'Basic' && auth.split(' ')[1].split(':').length === 2) {
                 apiKey = auth.split(' ')[1];
             } else {
                 throw new Error();

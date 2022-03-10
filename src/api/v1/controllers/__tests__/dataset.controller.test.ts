@@ -29,11 +29,11 @@ describe('CLASS: DatasetController', () => {
 
     describe('METHOD: getDatasets', () => {
         it('TEST: it should call the service function and return a 200 response if resolved', async () => {
-            let getDatasetsStub = sinon.stub(datasetService, 'getDatasets').resolves([]);
-            let getDatasetCountStub = sinon.stub(datasetService, 'getDatasetCount').resolves(0);
+            const getDatasetsStub = sinon.stub(datasetService, 'getDatasets').resolves([]);
+            const getDatasetCountStub = sinon.stub(datasetService, 'getDatasetCount').resolves(0);
 
-            let req = mockedRequest();
-            let res = mockedResponse();
+            const req = mockedRequest();
+            const res = mockedResponse();
 
             await datasetController.getDatasets(req, res);
 
@@ -52,11 +52,11 @@ describe('CLASS: DatasetController', () => {
         });
 
         it('TEST: it should call the service function and return a 500 response if rejected', async () => {
-            let getDatasetsStub = sinon.stub(datasetService, 'getDatasets').rejects();
-            let getDatasetCountStub = sinon.stub(datasetService, 'getDatasetCount');
+            const getDatasetsStub = sinon.stub(datasetService, 'getDatasets').rejects();
+            const getDatasetCountStub = sinon.stub(datasetService, 'getDatasetCount');
 
-            let req = mockedRequest();
-            let res = mockedResponse();
+            const req = mockedRequest();
+            const res = mockedResponse();
 
             await datasetController.getDatasets(req, res);
 
@@ -67,10 +67,10 @@ describe('CLASS: DatasetController', () => {
 
         describe('METHOD: getDataset', () => {
             it('TEST: it should call the service function and return a 200 response if resolved', async () => {
-                let getDatasetsStub = sinon.stub(datasetService, 'getDataset').returns(<any>{});
+                const getDatasetsStub = sinon.stub(datasetService, 'getDataset').returns(<any>{});
 
-                let req = mockedRequest();
-                let res = mockedResponse();
+                const req = mockedRequest();
+                const res = mockedResponse();
 
                 await datasetController.getDataset(req, res);
 
@@ -80,10 +80,10 @@ describe('CLASS: DatasetController', () => {
             });
 
             it('TEST: it should call the service function and return a 500 response if rejected', async () => {
-                let getDatasetsStub = sinon.stub(datasetService, 'getDataset').rejects();
+                const getDatasetsStub = sinon.stub(datasetService, 'getDataset').rejects();
 
-                let req = mockedRequest();
-                let res = mockedResponse();
+                const req = mockedRequest();
+                const res = mockedResponse();
 
                 await datasetController.getDataset(req, res);
 

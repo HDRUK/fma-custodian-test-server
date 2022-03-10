@@ -4,7 +4,7 @@ import { dataset } from '../types/dataset.interface';
 
 export default class DatasetService {
     public async getDatasets(q: string, offset: number, limit: number): Promise<dataset[]> {
-        let pipeline: Array<any> = [
+        const pipeline: Array<any> = [
             {
                 $match: {
                     ...(q && { $text: { $search: q } }),
@@ -18,7 +18,7 @@ export default class DatasetService {
 
         const datasets = await Datasets.aggregate(pipeline).exec();
 
-        let mappedDatasets: dataset[] = await datasets.map((dataset) => {
+        const mappedDatasets: dataset[] = await datasets.map((dataset) => {
             return {
                 '@schema': dataset.schema,
                 type: 'dataset',

@@ -18,4 +18,4 @@ router.post('/register', authorise('admin'), clientValidation, (req: Request, re
     }
 });
 
-module.exports = router;
+export default router;

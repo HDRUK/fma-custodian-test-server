@@ -17,8 +17,8 @@ describe('MIDDLEWARE: clientValidation', () => {
         return res;
     };
     it('TEST: it should return 400 for a missing client_name', () => {
-        let req = mockedRequest();
-        let res = mockedResponse();
+        const req = mockedRequest();
+        const res = mockedResponse();
         const nextFunction = jest.fn();
 
         req.body.client_email = 'test@test.com';
@@ -30,8 +30,8 @@ describe('MIDDLEWARE: clientValidation', () => {
     });
 
     it('TEST: it should return 400 for a missing client_email', () => {
-        let req = mockedRequest();
-        let res = mockedResponse();
+        const req = mockedRequest();
+        const res = mockedResponse();
         const nextFunction = jest.fn();
 
         req.body.client_name = 'testName';
@@ -43,8 +43,8 @@ describe('MIDDLEWARE: clientValidation', () => {
     });
 
     it('TEST: it should return 400 for an invalid auth_type', () => {
-        let req = mockedRequest();
-        let res = mockedResponse();
+        const req = mockedRequest();
+        const res = mockedResponse();
         const nextFunction = jest.fn();
 
         req.body.client_name = 'testName';
@@ -58,8 +58,8 @@ describe('MIDDLEWARE: clientValidation', () => {
     });
 
     it('TEST: it should invoke next() for a valid client_name, client_email and auth_type', () => {
-        let req = mockedRequest();
-        let res = mockedResponse();
+        const req = mockedRequest();
+        const res = mockedResponse();
         const nextFunction = jest.fn();
 
         req.body.client_name = 'testName';

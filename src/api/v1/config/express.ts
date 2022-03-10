@@ -4,6 +4,9 @@ import { rateLimit } from 'express-rate-limit';
 import express, { Application, Request, Response } from 'express';
 
 import Locals from './locals';
+import oauthRoutes from '../routes/oauth.route';
+import adminRoutes from '../routes/admin.route';
+import datasetRoutes from '../routes/dataset.route';
 
 class Express {
     public express: express.Application;
@@ -13,9 +16,9 @@ class Express {
     }
 
     private mountRoutes(): void {
-        this.express.use('/api/v1', require('../routes/dataset.route'));
-        this.express.use('/oauth', require('../routes/oauth.route'));
-        this.express.use('/admin', require('../routes/admin.route'));
+        this.express.use('/oauth', oauthRoutes);
+        this.express.use('/admin', adminRoutes);
+        this.express.use('/api/v1', datasetRoutes);
 
         this.express.use((req: Request, res: Response) => {
             res.status(404).end('404 - not found');

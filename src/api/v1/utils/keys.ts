@@ -6,7 +6,7 @@ import { CredentialsModel } from '../models/credentials.model';
 
 export const generateAPIKey = async (req: Request, res: Response): Promise<any> => {
     try {
-        let { client_name = '', client_email = '' }: { client_name: string; client_email: string } = req.body;
+        const { client_name = '', client_email = '' }: { client_name: string; client_email: string } = req.body;
 
         const APIKey = crypto.randomBytes(40).toString('hex').substring(40);
 

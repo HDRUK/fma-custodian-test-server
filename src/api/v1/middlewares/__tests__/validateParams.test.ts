@@ -17,8 +17,8 @@ describe('MIDDLEWARE: validateParams', () => {
         return res;
     };
     it('TEST: it should return 400 for an invalid offset', () => {
-        let req = mockedRequest();
-        let res = mockedResponse();
+        const req = mockedRequest();
+        const res = mockedResponse();
         const nextFunction = jest.fn();
 
         req.query = {
@@ -38,8 +38,8 @@ describe('MIDDLEWARE: validateParams', () => {
     });
 
     it('TEST: it should return 400 for an invalid limit', () => {
-        let req = mockedRequest();
-        let res = mockedResponse();
+        const req = mockedRequest();
+        const res = mockedResponse();
         const nextFunction = jest.fn();
 
         req.query = {
@@ -59,8 +59,8 @@ describe('MIDDLEWARE: validateParams', () => {
     });
 
     it('TEST: it should invoke next when all query params are valid', () => {
-        let req = mockedRequest();
-        let res = mockedResponse();
+        const req = mockedRequest();
+        const res = mockedResponse();
         const nextFunction = jest.fn();
 
         req.query = {
@@ -75,8 +75,8 @@ describe('MIDDLEWARE: validateParams', () => {
     });
 
     it('TEST: it should escape certain character from the query (q) param', () => {
-        let req = mockedRequest();
-        let res = mockedResponse();
+        const req = mockedRequest();
+        const res = mockedResponse();
         const nextFunction = jest.fn();
 
         req.query = {

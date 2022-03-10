@@ -16,4 +16,4 @@ router.get('/noauth/datasets/:id', datasetController.getDataset);
 router.get('/datasets', authorise('user'), validateParams, datasetController.getDatasets);
 router.get('/datasets/:id', authorise('user'), datasetController.getDataset);
 
-module.exports = router;
+export default router;

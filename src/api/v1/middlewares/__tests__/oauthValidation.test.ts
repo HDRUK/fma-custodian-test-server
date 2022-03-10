@@ -17,8 +17,8 @@ describe('MIDDLEWARE: oauthValidation', () => {
         return res;
     };
     it('TEST: it should return 400 for an invalid grant type', () => {
-        let req = mockedRequest();
-        let res = mockedResponse();
+        const req = mockedRequest();
+        const res = mockedResponse();
         const nextFunction = jest.fn();
 
         req.body.grant_type = 'InvalidGrantType';
@@ -30,8 +30,8 @@ describe('MIDDLEWARE: oauthValidation', () => {
     });
 
     it('TEST: it should return 400 for a grant type but empty client_id', () => {
-        let req = mockedRequest();
-        let res = mockedResponse();
+        const req = mockedRequest();
+        const res = mockedResponse();
         const nextFunction = jest.fn();
 
         req.body.grant_type = 'client_credentials';
@@ -44,8 +44,8 @@ describe('MIDDLEWARE: oauthValidation', () => {
     });
 
     it('TEST: it should return 400 for a grant type but empty client_secret', () => {
-        let req = mockedRequest();
-        let res = mockedResponse();
+        const req = mockedRequest();
+        const res = mockedResponse();
         const nextFunction = jest.fn();
 
         req.body.grant_type = 'client_credentials';
@@ -58,8 +58,8 @@ describe('MIDDLEWARE: oauthValidation', () => {
     });
 
     it('TEST: it should invoke next() for valid parameters', () => {
-        let req = mockedRequest();
-        let res = mockedResponse();
+        const req = mockedRequest();
+        const res = mockedResponse();
         const nextFunction = jest.fn();
 
         req.body.grant_type = 'client_credentials';
