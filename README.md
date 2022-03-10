@@ -2,7 +2,7 @@
 
 Example server matching the API specifications defined in https://editor.swagger.io/?url=https://raw.githubusercontent.com/HDRUK/schemata/fed-mdc-api/openapi/catalogue.yaml
 
-### Environment
+### Build and run
 
 #### .env file
 
@@ -10,6 +10,16 @@ Example server matching the API specifications defined in https://editor.swagger
 PORT="<port>"
 MONGO_URL="<URL to MongoDB instance>"
 JWT_SECRET="<JWT Secret Key>"
+```
+
+### Run application
+
+```
+1. npm install
+2. npm test (if req.)
+3. npm start
+
+Application should now run on port defined in .env file.
 ```
 
 ### Endpoints
