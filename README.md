@@ -12,7 +12,7 @@ MONGO_URL="<URL to MongoDB instance>"
 JWT_SECRET="<JWT Secret Key>"
 ```
 
-### Run application
+#### Run application
 
 ```
 1. npm install
@@ -21,6 +21,8 @@ JWT_SECRET="<JWT Secret Key>"
 
 Application should now run on port defined in .env file.
 ```
+
+---
 
 ### Endpoints
 
