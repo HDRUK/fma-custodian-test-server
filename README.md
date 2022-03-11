@@ -8,7 +8,12 @@ Example server matching the API specifications defined in https://editor.swagger
 
 ```
 PORT="<port>"
-MONGO_URI="<full URI for MongoDB database>"
+
+MONGO_USER="<username>" # Username with RW access to the relevant database
+MONGO_PASSWORD="<password>"
+MONGO_CLUSTER="<cluster>" # Relevant cluster
+MONGO_DATABASE="<database>" # Name of relevant database on cluster
+
 JWT_SECRET="<JWT Secret Key>"
 ```
 
