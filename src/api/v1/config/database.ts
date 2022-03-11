@@ -7,7 +7,7 @@ export class Database {
     mongod: any;
 
     public static async init(): Promise<any> {
-        const uri = Locals.config().mongoURL;
+        const uri = Locals.config().mongoURI;
 
         try {
             await mongoose.connect(uri);
