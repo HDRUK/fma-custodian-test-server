@@ -1,3 +1,4 @@
+import _ from 'lodash';
 import crypto from 'crypto';
 import bcrypt from 'bcryptjs';
 import jwt from 'jsonwebtoken';
@@ -33,6 +34,8 @@ export const generateClientCredentials = async (req: Request, res: Response): Pr
         }
 
         account.clientSecret = clientSecret;
+
+        account.apiKey = undefined;
 
         return res.status(200).send({ status: 'success', account });
     } catch (err) {

@@ -32,6 +32,8 @@ export const generateAPIKey = async (req: Request, res: Response): Promise<any> 
 
         account.apiKey = APIKey;
 
+        account.clientSecret = undefined;
+
         return res.status(200).send({ status: 'success', account });
     } catch (err) {
         res.status(500).send({ status: 'error', message: (<Error>err).message });
