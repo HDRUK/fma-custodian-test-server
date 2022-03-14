@@ -3,6 +3,7 @@ import { Request, Response } from 'express';
 
 import DatasetController from '../dataset.controller';
 import DatasetService from '../../services/dataset.service';
+import LoggingService from '../../services/google/logging.service';
 
 afterEach(() => {
     sinon.restore();
@@ -54,6 +55,7 @@ describe('CLASS: DatasetController', () => {
         it('TEST: it should call the service function and return a 500 response if rejected', async () => {
             const getDatasetsStub = sinon.stub(datasetService, 'getDatasets').rejects();
             const getDatasetCountStub = sinon.stub(datasetService, 'getDatasetCount');
+            sinon.stub(datasetController._logger, 'sendDataInLogging');
 
             const req = mockedRequest();
             const res = mockedResponse();
@@ -81,6 +83,7 @@ describe('CLASS: DatasetController', () => {
 
             it('TEST: it should call the service function and return a 500 response if rejected', async () => {
                 const getDatasetsStub = sinon.stub(datasetService, 'getDataset').rejects();
+                sinon.stub(datasetController._logger, 'sendDataInLogging');
 
                 const req = mockedRequest();
                 const res = mockedResponse();

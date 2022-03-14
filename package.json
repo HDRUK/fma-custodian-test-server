@@ -19,6 +19,7 @@
         "morgan": "^1.10.0",
         "nodemon": "^2.0.15",
         "response-time": "^2.3.2",
+        "simple-gcp-logging": "git+https://github.com/HDRUK/simple-gcp-logging.git#main",
         "uuid": "^8.3.2"
     },
     "devDependencies": {
