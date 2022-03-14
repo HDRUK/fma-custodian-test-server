@@ -5,6 +5,7 @@ import jwt from 'jsonwebtoken';
 
 import Locals from '../config/locals';
 import { Request, Response } from 'express';
+import { TokenModel } from '../models/token.model';
 import { CredentialsModel } from '../models/credentials.model';
 
 export const generateClientCredentials = async (req: Request, res: Response): Promise<any> => {
@@ -43,25 +44,67 @@ export const generateClientCredentials = async (req: Request, res: Response): Pr
     }
 };
 
-export const verifyClient: any = async (req: Request, res: Response) => {
-    const { client_id, client_secret }: { client_id: string; client_secret: string } = req.body;
+export const generateToken: any = async (req: Request, res: Response) => {
+    const { client_id, client_secret, refresh_token }: { client_id: string; client_secret: string; refresh_token: string } = req.body;
 
-    const account = await authorizeAccount(client_id, client_secret);
+    try {
+        if (refresh_token) {
+            const accessToken = await verifyRefreshToken(refresh_token);
 
-    if (!account) {
+            return res.status(200).send({
+                token_type: 'Bearer',
+                access_token: accessToken,
+                expires_in: 900,
+            });
+        }
+
+        const [accessToken, refreshToken] = await verifyClientCredentials(client_id, client_secret);
+
+        return res.status(200).send({
+            token_type: 'Bearer',
+            access_token: accessToken,
+            refresh_token: refreshToken,
+            expires_in: 900,
+        });
+    } catch (err) {
         return res.status(400).send({
             status: 'error',
             message: 'OAuth2Error: invalid credentials',
         });
     }
+};
 
-    const jwt = signToken({ id: account.clientId, timeStamp: Date.now() }, 900);
+const verifyRefreshToken: any = async (refreshToken: string) => {
+    const token: any = TokenModel.findOne({ token: refreshToken });
 
-    return res.status(200).send({
-        token_type: 'Bearer',
-        access_token: jwt,
-        expires_in: 900,
-    });
+    if (!token) {
+        throw new Error();
+    }
+
+    const accessToken = signToken({ id: token.client, timeStamp: Date.now() }, 900);
+
+    return accessToken;
+};
+
+const verifyClientCredentials: any = async (clientId: string, clientSecret: string) => {
+    const account = await authorizeAccount(clientId, clientSecret);
+
+    if (!account) {
+        throw new Error();
+    }
+
+    const accessToken = signToken({ id: account._id, timeStamp: Date.now() }, 900);
+    const refreshToken = signToken({ id: account._id, timeStamp: Date.now() }, 64000);
+
+    await TokenModel.remove({ client: clientId });
+
+    await new TokenModel({
+        client: account.clientId,
+        token: refreshToken,
+        createdAt: Date.now(),
+    }).save();
+
+    return [accessToken, refreshToken];
 };
 
 const authorizeAccount: any = async (clientId: string, clientSecret: string) => {

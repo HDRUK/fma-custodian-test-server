@@ -7,7 +7,12 @@ const oauthValidation = (req: Request, res: Response, next: NextFunction) => {
         client_id = '',
         client_secret = '',
         grant_type = '',
-    }: { client_id: string; client_secret: string; grant_type: string } = req.body;
+        refresh_token = '',
+    }: { client_id: string; client_secret: string; grant_type: string; refresh_token: string } = req.body;
+
+    if (!_.isEmpty(refresh_token)) {
+        return next();
+    }
 
     if (_.isEmpty(client_id) || _.isEmpty(client_secret) || _.isEmpty(grant_type)) {
         return res.status(400).send({
@@ -18,8 +23,7 @@ const oauthValidation = (req: Request, res: Response, next: NextFunction) => {
 
     switch (grant_type) {
         case 'client_credentials':
-            next();
-            break;
+            return next();
         default:
             return res.status(400).send({
                 status: 'error',
