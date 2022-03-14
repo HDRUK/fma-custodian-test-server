@@ -14,14 +14,15 @@ const authorise = (clientType: string) => {
             if (auth && auth.split(' ')[0] === 'Bearer') {
                 token = auth.split(' ')[1];
             } else if (auth && auth.split(' ')[0] === 'Basic') {
-                apiKey = Buffer.from(auth.split(' ')[1], "base64").toString("ascii")
+                apiKey = Buffer.from(auth.split(' ')[1], 'base64').toString('ascii');
             } else {
                 throw new Error();
             }
         } catch (err) {
             return res.status(401).send({
                 status: 'Unauthorised',
-                message: 'The authorization header value must be of the format "Basic base64encoded(<client_id>:<api_key>)" or "Bearer <access_token>"',
+                message:
+                    'The authorization header value must be of the format "Basic base64encoded(<client_id>:<api_key>)" or "Bearer <access_token>"',
             });
         }
 
