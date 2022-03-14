@@ -31,11 +31,15 @@ export default class AuthService {
             throw new Error('Error generating or updating client account');
         }
 
-        account.clientSecret = clientSecret;
+        const credentials = {
+            clientId: account.clientId,
+            clientSecret: clientSecret,
+            clientName: clientName,
+            clientEmail: clientEmail,
+            clientType: account.clientType,
+        };
 
-        account.apiKey = undefined;
-
-        return account;
+        return credentials;
     }
 
     public async verifyRefreshToken(refreshToken: string) {
@@ -94,11 +98,15 @@ export default class AuthService {
             throw new Error('Error generating or updating client account');
         }
 
-        account.apiKey = APIKey;
+        const credentials = {
+            clientId: account.clientId,
+            apiKey: APIKey,
+            clientName: clientName,
+            clientEmail: clientEmail,
+            clientType: account.clientType,
+        };
 
-        account.clientSecret = undefined;
-
-        return account;
+        return credentials;
     }
 
     public static async authoriseKey(apiKey: string) {
