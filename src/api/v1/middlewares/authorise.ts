@@ -2,7 +2,7 @@ import jwt from 'jsonwebtoken';
 import { Request, Response, NextFunction } from 'express';
 
 import Locals from '../config/locals';
-import { authoriseKey } from '../utils/keys';
+import AuthService from '../services/auth.service';
 import { CredentialsModel } from '../models/credentials.model';
 
 const authorise = (clientType: string) => {
@@ -42,7 +42,7 @@ const authorise = (clientType: string) => {
             }
 
             if (apiKey) {
-                const client: any = await authoriseKey(apiKey);
+                const client: any = await AuthService.authoriseKey(apiKey);
 
                 if (clientType === 'admin') {
                     if (client.clientType !== 'admin') {

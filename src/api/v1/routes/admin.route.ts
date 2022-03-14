@@ -1,21 +1,15 @@
 import express, { Router, Request, Response } from 'express';
 
-import { generateAPIKey } from '../utils/keys';
-import { generateClientCredentials } from '../utils/oauth';
+import AuthService from '../services/auth.service';
+import AuthController from '../controllers/auth.controller';
 import { clientValidation, authorise } from '../middlewares/index';
 
 const router: Router = express.Router();
 
+const authService = new AuthService();
+const authController = new AuthController(authService);
+
 // Protected or admin-administered endpoint for registering new clients with OAuth or an API key (GIVEN AS AN EXAMPLE ONLY)
-router.post('/register', authorise('admin'), clientValidation, (req: Request, res: Response) => {
-    switch (req.body.auth_type) {
-        case 'oauth':
-            generateClientCredentials(req, res);
-            break;
-        case 'api_key':
-            generateAPIKey(req, res);
-            break;
-    }
-});
+router.post('/register', authorise('admin'), clientValidation, authController.generateClientAccount);
 
 export default router;
