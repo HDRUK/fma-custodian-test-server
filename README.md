@@ -160,12 +160,22 @@ As above.
 ```
 POST /api/v1/oauth/token
 
+Authorise via the OAuth 2.0 client_credentials grant flow to generate an access token, or optionally use a verifiable refresh token to obtain further access tokens.
+
 Example JSON body:
 
+// For initial authorisation
 {
     "grant_type": "client_credentials", # only client credentials flow is supported
     "client_id": "<client_id>",
     "client_secret": "<client_secret>"
+}
+
+OR
+
+// For subsequent refreshes of access_token using a refresh token
+{
+    "refresh_token": "<refresh_token>"
 }
 
 # Responses
@@ -178,9 +188,18 @@ Example JSON body:
 Example 200 response:
 
 ```
+// If initial authorisation using client ID and client secret
 {
-    "token_type": "jwt",
-    "access_token": "Bearer xxxxxxxxxxxxxxxxxxx...",
+    "token_type": "Bearer",
+    "access_token": "xxxxxxxxxxxxxxxxxxx...",
+    "refresh_token": "yyyyyyyyyyyyyyyyyyyy...",
+    "expires_in": "900"
+}
+
+// If using refresh token
+{
+    "token_type": "Bearer",
+    "access_token": "xxxxxxxxxxxxxxxxxxx...",
     "expires_in": "900"
 }
 ```
