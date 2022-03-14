@@ -7,6 +7,8 @@ import Locals from '../config/locals';
 import { TokenModel } from '../models/token.model';
 import { CredentialsModel } from '../models/credentials.model';
 
+import { credentials } from '../types/credentials.interface';
+
 export default class AuthService {
     public async generateClientCredentials(clientName: string, clientEmail: string) {
         const clientSecret = crypto.randomBytes(50).toString('hex').substring(50);
@@ -31,7 +33,7 @@ export default class AuthService {
             throw new Error('Error generating or updating client account');
         }
 
-        const credentials = {
+        const credentials: credentials = {
             clientId: account.clientId,
             clientSecret: clientSecret,
             clientName: clientName,
@@ -98,7 +100,7 @@ export default class AuthService {
             throw new Error('Error generating or updating client account');
         }
 
-        const credentials = {
+        const credentials: credentials = {
             clientId: account.clientId,
             apiKey: APIKey,
             clientName: clientName,
