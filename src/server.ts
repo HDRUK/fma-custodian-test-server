@@ -15,6 +15,10 @@ const initApplication = async () => {
     const app: Application = express();
     const port: number = Locals.config().port;
 
+    app.use(bodyParser.urlencoded({ extended: false }));
+    app.use(bodyParser.json());
+    app.use(logger('dev'));
+
     app.use('/oauth', oauthRoutes);
     app.use('/admin', adminRoutes);
     app.use('/api/v1', datasetRoutes);
@@ -31,10 +35,6 @@ const initApplication = async () => {
             legacyHeaders: false,
         }),
     );
-
-    app.use(bodyParser.urlencoded({ extended: false }));
-    app.use(bodyParser.json());
-    app.use(logger('dev'));
 
     await Database.init();
 
