@@ -63,7 +63,7 @@ export default class AuthService {
         await TokenModel.deleteMany({ client: clientId });
 
         await new TokenModel({
-            client: account.clientId,
+            clientId: account.clientId,
             token: refreshToken,
             createdAt: Date.now(),
         }).save();
