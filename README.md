@@ -15,6 +15,9 @@ MONGO_CLUSTER="<cluster>" # Relevant cluster
 MONGO_DATABASE="<database>" # Name of relevant database on cluster
 
 JWT_SECRET="<JWT Secret Key>"
+
+LOGGING_PROJECT_ID="<GCP project ID>"
+LOGGING_LOG_NAME="<GCP logs name>"
 ```
 
 #### Run application
