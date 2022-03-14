@@ -55,12 +55,11 @@ export const verifyClient: any = async (req: Request, res: Response) => {
         });
     }
 
-    const jwt = signToken({ id: account.id, timeStamp: Date.now() }, 900);
-    const access_token = `Bearer ${jwt}`;
+    const jwt = signToken({ id: account.clientId, timeStamp: Date.now() }, 900);
 
     return res.status(200).send({
-        token_type: 'jwt',
-        access_token,
+        token_type: 'Bearer',
+        access_token: jwt,
         expires_in: 900,
     });
 };
