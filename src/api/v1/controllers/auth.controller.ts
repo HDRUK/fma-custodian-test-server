@@ -2,7 +2,6 @@ import { Request, Response } from 'express';
 
 import BaseController from './base.controller';
 import AuthService from '../services/auth.service';
-import LoggingService from '../services/google/logging.service';
 
 export default class AuthController extends BaseController {
     authService: AuthService;
@@ -39,7 +38,7 @@ export default class AuthController extends BaseController {
                 expires_in: 900,
             });
         } catch (err) {
-            await 
+            this._logger.sendDataInLogging({ data: 'OAuth2Error: invalid credentials' }, 'INFO');
             return res.status(400).send({
                 status: 'error',
                 message: 'OAuth2Error: invalid credentials',
