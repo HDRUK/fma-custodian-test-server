@@ -1,4 +1,3 @@
-import _ from 'lodash';
 import crypto from 'crypto';
 import bcrypt from 'bcryptjs';
 import jwt from 'jsonwebtoken';
@@ -148,7 +147,7 @@ export default class AuthService {
         return;
     }
 
-    private signToken(account: any, expiresIn: number = 604800) {
+    private signToken(account: any, expiresIn = 604800) {
         return jwt.sign({ data: account }, Locals.config().JWTSecret, {
             algorithm: 'HS256',
             expiresIn,

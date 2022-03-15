@@ -3,7 +3,6 @@ import { Request, Response } from 'express';
 
 import DatasetController from '../dataset.controller';
 import DatasetService from '../../services/dataset.service';
-import LoggingService from '../../services/google/logging.service';
 
 afterEach(() => {
     sinon.restore();

@@ -1,8 +1,8 @@
 export interface credentials {
-    clientId: String;
-    clientSecret?: String;
-    apiKey?: String;
-    clientName: String;
-    clientEmail: String;
-    clientType: String;
+    clientId: string;
+    clientSecret?: string;
+    apiKey?: string;
+    clientName: string;
+    clientEmail: string;
+    clientType: string;
 }
