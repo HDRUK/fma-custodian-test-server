@@ -207,9 +207,12 @@ Example 200 response:
 }
 ```
 
-### Other responses
+### Rate limiting
 
-#### Not found
+The application includes simple rate limiting. Requests are limited currently to 100 per 15min window.
+
+### Other responses
 
 404 - not found
 401 - unauthorised
+429 - too many requests

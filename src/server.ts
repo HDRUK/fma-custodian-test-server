@@ -22,7 +22,7 @@ const initApplication = async () => {
     app.use(
         rateLimit({
             windowMs: 15 * 60 * 1000,
-            max: 5,
+            max: 100,
             standardHeaders: true,
             legacyHeaders: false,
         }),
