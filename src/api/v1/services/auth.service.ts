@@ -65,7 +65,7 @@ export default class AuthService {
         const accessToken = this.signToken({ id: account._id, timeStamp: Date.now() }, 900);
         const refreshToken = this.signToken({ id: account._id, timeStamp: Date.now() }, 64000);
 
-        await TokenModel.deleteMany({ client: clientId });
+        await TokenModel.deleteMany({ clientId: clientId });
 
         await new TokenModel({
             clientId: account.clientId,
