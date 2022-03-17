@@ -216,3 +216,4 @@ The application includes simple rate limiting. Requests are limited currently to
 404 - not found
 401 - unauthorised
 429 - too many requests
+500 - server error
