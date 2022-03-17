@@ -44,9 +44,11 @@ export default class AuthService {
     }
 
     public async verifyRefreshToken(refreshToken: string) {
-        const token: any = TokenModel.findOne({ token: refreshToken });
+        const token: any = await TokenModel.findOne({ token: refreshToken });
 
-        if (!token) {
+        const elapsedTimeMS = Date.now() - Date.parse(token.createdAt);
+
+        if (!token || elapsedTimeMS > 60 * 60 * 24 * 7 * 1000) {
             throw new Error();
         }
 
