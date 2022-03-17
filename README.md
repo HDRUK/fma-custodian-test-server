@@ -112,7 +112,7 @@ Returns a list of datasets according to the schema in the above Swagger docs.
 AUTH - API key or bearer token in header:
 
 CASE: API Key
-    "Authorization": "Basic <client_id><API key>"
+    "Authorization": "Basic <base64encoded(<client_id><API key>)>"
 CASE: Bearer token (OAuth 2.0)
     "Authorization": "Bearer <client_id><client_secret>" # see /token specification
 
@@ -141,7 +141,7 @@ Returns a single dataset conforming to the HDR UK v2 specification.
 AUTH - API key or bearer token in header:
 
 CASE: API Key
-    "Authorization": "Basic <client_id><API key>"
+    "Authorization": "Basic <base64encoded(<client_id><API key>)>"
 CASE: Bearer token (OAuth 2.0)
     "Authorization": "Bearer <client_id><client_secret>" # see /token specification
 
