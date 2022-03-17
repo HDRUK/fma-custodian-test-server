@@ -19,6 +19,15 @@ const initApplication = async () => {
     app.use(bodyParser.json());
     app.use(logger('dev'));
 
+    app.use(
+        rateLimit({
+            windowMs: 15 * 60 * 1000,
+            max: 5,
+            standardHeaders: true,
+            legacyHeaders: false,
+        }),
+    );
+
     app.use('/oauth', oauthRoutes);
     app.use('/admin', adminRoutes);
     app.use('/api/v1', datasetRoutes);
@@ -26,15 +35,6 @@ const initApplication = async () => {
     app.use((_req: Request, res: Response) => {
         res.status(404).end('404 - not found');
     });
-
-    app.use(
-        rateLimit({
-            windowMs: 15 * 60 * 1000,
-            max: 100,
-            standardHeaders: true,
-            legacyHeaders: false,
-        }),
-    );
 
     await Database.init();
 

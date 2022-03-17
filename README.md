@@ -212,3 +212,4 @@ Example 200 response:
 #### Not found
 
 404 - not found
+401 - unauthorised
