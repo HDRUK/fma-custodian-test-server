@@ -35,8 +35,8 @@ export default class DatasetService {
         return mappedDatasets;
     }
 
-    public async getDataset(id: string) {
-        const dataset = await Datasets.findOne({ 'datasetv2.identifier': id }).select('datasetv2').lean();
+    public async getDataset(pid: string) {
+        const dataset = await Datasets.findOne({ 'datasetv2.identifier': pid }).select('datasetv2').lean();
 
         return dataset.datasetv2;
     }

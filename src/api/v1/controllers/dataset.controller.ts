@@ -33,8 +33,8 @@ export default class DatasetController extends BaseController {
 
     public async getDataset(req: Request, res: Response): Promise<any> {
         try {
-            const id: string = req.params.id;
-            const dataset: any = await this.datasetService.getDataset(id);
+            const pid: string = req.params.persistentId;
+            const dataset: any = await this.datasetService.getDataset(pid);
 
             return res.status(200).json(dataset);
         } catch (err) {
