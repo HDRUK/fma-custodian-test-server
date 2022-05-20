@@ -22,7 +22,7 @@ export default class DatasetService {
             return {
                 '@schema': dataset.schema,
                 type: 'dataset',
-                identifier: dataset.datasetv2.identifier,
+                persistentId: dataset.datasetv2.identifier,
                 name: dataset.datasetv2.summary.title,
                 description: dataset.datasetv2.documentation.description,
                 version: dataset.datasetv2.version,

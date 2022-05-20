@@ -75,7 +75,7 @@ describe('CLASS: datasetService', () => {
                 {
                     '@schema': 'linkToSchema',
                     type: 'dataset',
-                    identifier: 'testPersistentID_1',
+                    persistentId: 'testPersistentID_1',
                     name: 'testDataset_1',
                     description: 'testDescription_1',
                     version: '1.0.0',
@@ -86,7 +86,7 @@ describe('CLASS: datasetService', () => {
                 {
                     '@schema': 'linkToSchema',
                     type: 'dataset',
-                    identifier: 'testPersistentID_2',
+                    persistentId: 'testPersistentID_2',
                     name: 'testDataset_2',
                     description: 'testDescription_2',
                     version: '1.0.0',
@@ -107,7 +107,7 @@ describe('CLASS: datasetService', () => {
                 {
                     '@schema': 'linkToSchema',
                     type: 'dataset',
-                    identifier: 'testPersistentID_2',
+                    persistentId: 'testPersistentID_2',
                     name: 'testDataset_2',
                     description: 'testDescription_2',
                     version: '1.0.0',
@@ -128,7 +128,7 @@ describe('CLASS: datasetService', () => {
                 {
                     '@schema': 'linkToSchema',
                     type: 'dataset',
-                    identifier: 'testPersistentID_1',
+                    persistentId: 'testPersistentID_1',
                     name: 'testDataset_1',
                     description: 'testDescription_1',
                     version: '1.0.0',
@@ -149,7 +149,7 @@ describe('CLASS: datasetService', () => {
                 {
                     '@schema': 'linkToSchema',
                     type: 'dataset',
-                    identifier: 'testPersistentID_1',
+                    persistentId: 'testPersistentID_1',
                     name: 'testDataset_1',
                     description: 'testDescription_1',
                     version: '1.0.0',

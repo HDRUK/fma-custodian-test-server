@@ -1,7 +1,7 @@
 export interface dataset {
     '@schema': string;
     type: string;
-    identifier: string;
+    persistentId: string;
     name: string;
     description: string;
     version: string;
