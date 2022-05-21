@@ -79,23 +79,27 @@ export default class AuthService {
     }
 
     public async generateAPIKey(clientName: string, clientEmail: string) {
-        const APIKey = crypto.randomBytes(40).toString('hex').substring(40);
-
-        const hashedAPIKey = await bcrypt.hash(APIKey, 10);
+        const APIKeyRandomString = crypto.randomBytes(40).toString('hex').substring(40);
+        const hashedRandomString = await bcrypt.hash(APIKeyRandomString, 10);
 
         const existingAccount = await CredentialsModel.findOne({ clientName }).lean();
 
+        let clientId = crypto.randomBytes(15).toString('hex').substring(15);
+
         let account;
         if (existingAccount) {
-            account = await CredentialsModel.findByIdAndUpdate({ _id: existingAccount._id }, { apiKey: hashedAPIKey });
+            clientId = existingAccount.clientId;
+            account = await CredentialsModel.findByIdAndUpdate({ _id: existingAccount._id }, { apiSecret: hashedRandomString });
         } else {
             account = await CredentialsModel.create({
-                apiKey: hashedAPIKey,
-                clientId: crypto.randomBytes(15).toString('hex').substring(15),
+                apiSecret: hashedRandomString,
+                clientId: clientId,
                 clientName: clientName,
                 clientEmail: clientEmail,
             });
         }
+
+        const APIKey = Buffer.from(`${clientId}:${APIKeyRandomString}`).toString('base64');
 
         if (!account) {
             throw new Error('Error generating or updating client account');
@@ -122,7 +126,7 @@ export default class AuthService {
             throw new Error();
         }
 
-        const match = await bcrypt.compare(key, account.apiKey);
+        const match = await bcrypt.compare(key, account.apiSecret);
 
         if (!match) {
             throw new Error();

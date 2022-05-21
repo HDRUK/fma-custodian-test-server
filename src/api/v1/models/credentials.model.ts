@@ -10,7 +10,7 @@ const credentialsSchema = new Schema({
         enum: ['user', 'admin'],
         default: 'user',
     },
-    apiKey: String,
+    apiSecret: String,
 });
 
 export const CredentialsModel = model('Credentials', credentialsSchema);

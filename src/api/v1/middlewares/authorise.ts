@@ -8,21 +8,29 @@ import { CredentialsModel } from '../models/credentials.model';
 const authorise = (clientType: string) => {
     return async (req: Request, res: Response, next: NextFunction) => {
         const auth: any = req.headers['authorization'];
+        const apiKeyEncoded: any = req.headers['apikey'];
         let token, apiKey;
 
         try {
-            if (auth && auth.split(' ')[0] === 'Bearer') {
-                token = auth.split(' ')[1];
-            } else if (auth && auth.split(' ')[0] === 'Basic') {
-                apiKey = Buffer.from(auth.split(' ')[1], 'base64').toString('ascii');
-            } else {
+            if ((!auth && !apiKeyEncoded) || (auth && apiKeyEncoded)) {
                 throw new Error();
+            }
+
+            if (auth) {
+                if (auth.split(' ')[0] === 'Bearer') {
+                    token = auth.split(' ')[1];
+                } else {
+                    throw new Error();
+                }
+            }
+
+            if (apiKeyEncoded) {
+                apiKey = Buffer.from(apiKeyEncoded, 'base64').toString('ascii');
             }
         } catch (err) {
             return res.status(401).send({
                 status: 'Unauthorised',
-                message:
-                    'The authorization header value must be of the format "Basic base64encoded(<client_id>:<api_key>)" or "Bearer <access_token>"',
+                message: 'Authorization header must be EITHER { "Authorization": "Bearer <access_token>"} OR { "apikey": "<api_key>" }',
             });
         }
 
