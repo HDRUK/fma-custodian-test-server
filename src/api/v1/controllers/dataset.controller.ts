@@ -36,6 +36,10 @@ export default class DatasetController extends BaseController {
             const pid: string = req.params.persistentId;
             const dataset: any = await this.datasetService.getDataset(pid);
 
+            if (!dataset) {
+                return res.status(404).json({ status: 'error', message: 'Dataset not found' });
+            }
+
             return res.status(200).json(dataset);
         } catch (err) {
             this._logger.sendDataInLogging({ data: (<Error>err).message }, 'ERROR');

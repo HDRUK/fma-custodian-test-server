@@ -8,13 +8,14 @@ const database = new Database();
 const datasetsStub = [
     {
         schema: 'linkToSchema',
+        persistentId: 'abc',
         status: 'active',
         timestamps: {
             published: '2022-01-01T08:00:00.000+00:00',
             updated: '2022-01-01T08:00:00.000+00:00',
         },
         datasetv2: {
-            identifier: 'testPersistentID_1',
+            identifier: 'testID_1',
             summary: {
                 title: 'testDataset_1',
                 publisher: {
@@ -31,13 +32,14 @@ const datasetsStub = [
     },
     {
         schema: 'linkToSchema',
+        persistentId: 'def',
         status: 'active',
         timestamps: {
             published: '2022-01-01T08:00:00.000+00:00',
             updated: '2022-01-01T08:00:00.000+00:00',
         },
         datasetv2: {
-            identifier: 'testPersistentID_2',
+            identifier: 'testID_2',
             summary: {
                 title: 'testDataset_2',
                 publisher: {
@@ -75,7 +77,7 @@ describe('CLASS: datasetService', () => {
                 {
                     '@schema': 'linkToSchema',
                     type: 'dataset',
-                    persistentId: 'testPersistentID_1',
+                    persistentId: 'abc',
                     name: 'testDataset_1',
                     description: 'testDescription_1',
                     version: '1.0.0',
@@ -86,7 +88,7 @@ describe('CLASS: datasetService', () => {
                 {
                     '@schema': 'linkToSchema',
                     type: 'dataset',
-                    persistentId: 'testPersistentID_2',
+                    persistentId: 'def',
                     name: 'testDataset_2',
                     description: 'testDescription_2',
                     version: '1.0.0',
@@ -107,7 +109,7 @@ describe('CLASS: datasetService', () => {
                 {
                     '@schema': 'linkToSchema',
                     type: 'dataset',
-                    persistentId: 'testPersistentID_2',
+                    persistentId: 'def',
                     name: 'testDataset_2',
                     description: 'testDescription_2',
                     version: '1.0.0',
@@ -128,7 +130,7 @@ describe('CLASS: datasetService', () => {
                 {
                     '@schema': 'linkToSchema',
                     type: 'dataset',
-                    persistentId: 'testPersistentID_1',
+                    persistentId: 'abc',
                     name: 'testDataset_1',
                     description: 'testDescription_1',
                     version: '1.0.0',
@@ -149,7 +151,7 @@ describe('CLASS: datasetService', () => {
                 {
                     '@schema': 'linkToSchema',
                     type: 'dataset',
-                    persistentId: 'testPersistentID_1',
+                    persistentId: 'abc',
                     name: 'testDataset_1',
                     description: 'testDescription_1',
                     version: '1.0.0',
@@ -166,10 +168,10 @@ describe('CLASS: datasetService', () => {
 
     describe('METHOD: getDataset', () => {
         it('TEST: it should return the datasetv2 field of a single dataset', async () => {
-            const dataset = await datasetService.getDataset('testPersistentID_1');
+            const dataset = await datasetService.getDataset('abc');
 
             const expectedResponse = {
-                identifier: 'testPersistentID_1',
+                identifier: 'testID_1',
                 summary: {
                     title: 'testDataset_1',
                     publisher: {

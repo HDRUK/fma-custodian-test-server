@@ -22,7 +22,7 @@ export default class DatasetService {
             return {
                 '@schema': dataset.schema,
                 type: 'dataset',
-                persistentId: dataset.datasetv2.identifier,
+                persistentId: dataset.persistentId,
                 name: dataset.datasetv2.summary.title,
                 description: dataset.datasetv2.documentation.description,
                 version: dataset.datasetv2.version,
@@ -36,9 +36,13 @@ export default class DatasetService {
     }
 
     public async getDataset(pid: string) {
-        const dataset = await Datasets.findOne({ 'datasetv2.identifier': pid }).select('datasetv2').lean();
+        const datasets = await Datasets.find({ persistentId: pid }).sort({ 'datasetv2.version': -1 }).select('datasetv2').lean();
 
-        return dataset.datasetv2;
+        if (datasets.length > 0) {
+            return datasets[0].datasetv2;
+        }
+
+        return;
     }
 
     public async getDatasetCount() {
