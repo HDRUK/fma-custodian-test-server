@@ -5,7 +5,7 @@ import Locals from '../../config/locals';
 export default class LoggingService {
     _logger;
     constructor() {
-        if (Locals.config().loggingType != 'gcp') {
+        if (Locals.config().loggingType !== 'gcp') {
             return;
         }
         this._logger = LoggerGCP.createLoggerGCP({
@@ -16,7 +16,7 @@ export default class LoggingService {
 
     sendDataInLogging(data: any, severity: any) {
 
-        if (Locals.config().loggingType == "local")
+        if (Locals.config().loggingType !== "gcp")
         {
             process.stdout.write(severity.toString());
             process.stdout.write(" - ");

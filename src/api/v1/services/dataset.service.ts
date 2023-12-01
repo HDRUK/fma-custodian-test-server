@@ -25,10 +25,10 @@ export default class DatasetService {
             }
 
             // If the search query isn't blank
-            if (q != '')
+            if (q !== '')
             {
                 // If the query can be found in the description
-                if (parsedJSON.summary.abstract.search(q) != -1)
+                if (parsedJSON.summary.abstract.search(q) !== -1)
                 {
                     datasets.push(datasetData);
                 }
@@ -64,7 +64,7 @@ export default class DatasetService {
             const parsedJSON = JSON.parse(file);
 
             // This is the dataset the user is looking for
-            if (parsedJSON.identifier == pid)
+            if (parsedJSON.identifier === pid)
             {
                 return {
                     persistentId : parsedJSON.identifier,
