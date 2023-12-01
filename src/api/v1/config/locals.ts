@@ -10,8 +10,9 @@ class Locals {
         const JWTSecret = process.env.JWT_SECRET;
         const googleProjectId = process.env.LOGGING_PROJECT_ID;
         const googleLoggingName = process.env.LOGGING_LOG_NAME;
+        const loggingType = process.env.LOGGING_TYPE;
 
-        return { mongoURI, port, JWTSecret, googleProjectId, googleLoggingName };
+        return { mongoURI, port, JWTSecret, googleProjectId, googleLoggingName, loggingType };
     }
 }
 
