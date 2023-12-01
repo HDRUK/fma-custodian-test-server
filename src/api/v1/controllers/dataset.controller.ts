@@ -17,15 +17,18 @@ export default class DatasetController extends BaseController {
 
     public async getDatasets(req: Request, res: Response): Promise<any> {
         try {
-            const { q = '', offset = '0', limit }: { q: string; offset: string; limit: string } = <any>req.query;
+            const { q = '', offset = '0', limit = '0'}: { q: string; offset: string; limit: string } = <any>req.query;
 
-            const datasets = await this.datasetService.getDatasets(q, parseInt(offset), parseInt(limit));
+            const limitInt = parseInt(limit);
+            const offsetInt = parseInt(offset);
+            const datasets = await this.datasetService.getDatasets(q, offsetInt, limitInt);
             const datasetTotal = await this.datasetService.getDatasetCount();
 
             return res
                 .status(200)
-                .json({ query: { q: q || '', total: String(datasetTotal), limit: limit || '', offset: offset }, items: datasets });
+                .json({ query: { q: q || '', total: datasetTotal, limit: limitInt, offset: offsetInt }, items: datasets });
         } catch (err) {
+            this._logger.sendDataInLogging({ data: err.name }, 'ERROR');
             this._logger.sendDataInLogging({ data: (<Error>err).message }, 'ERROR');
             return res.status(500).json({ status: 'error', message: (<Error>err).message });
         }

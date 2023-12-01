@@ -1,53 +1,91 @@
-import { Datasets } from '../models/dataset.model';
-
 import { dataset } from '../types/dataset.interface';
+import fs from 'fs';
 
 export default class DatasetService {
     public async getDatasets(q: string, offset: number, limit: number): Promise<dataset[]> {
-        const pipeline: Array<any> = [
+        // The files directory contains a set of example JSON files
+        const files = fs.readdirSync("./files");
+        let datasets = [];
+
+        for (let i = 0; i < files.length; i++)
+        {
+            const file = fs.readFileSync("./files/" + files[i], 'utf-8');
+            const parsedJSON = JSON.parse(file);
+            const datasetData = {
+                persistentId : parsedJSON.identifier,
+                "@schema" : parsedJSON["@schema"],
+                version : parsedJSON.version,
+                issued : parsedJSON.issued,
+                modified : parsedJSON.modified,
+                name : parsedJSON.summary.title,
+                description : parsedJSON.summary.abstract,
+                type : "dataset",
+                source : parsedJSON.summary.publisher.name,
+                self : "http://example-url.com/api/datasets/" + parsedJSON.identifier
+            }
+
+            // If the search query isn't blank
+            if (q != '')
             {
-                $match: {
-                    ...(q && { $text: { $search: q } }),
-                    status: 'active',
-                },
-            },
-            { $skip: offset },
-        ];
+                // If the query can be found in the description
+                if (parsedJSON.summary.abstract.search(q) != -1)
+                {
+                    datasets.push(datasetData);
+                }
+            }
+            else
+            {
+                datasets.push(datasetData);
+            }
+        }
 
-        if (limit) pipeline.push({ $limit: limit });
+        // Check the offset is valid
+        if (offset < datasets.length)
+        {
+            datasets = datasets.slice(offset);
+        }
 
-        const datasets = await Datasets.aggregate(pipeline).exec();
+        if (!isNaN(limit) && limit > 0)
+        {
+            datasets = datasets.slice(0, limit);
+        }
 
-        const mappedDatasets: dataset[] = await datasets.map((dataset) => {
-            return {
-                '@schema': dataset.schema,
-                type: 'dataset',
-                persistentId: dataset.persistentId,
-                name: dataset.datasetv2.summary.title,
-                description: dataset.datasetv2.documentation.description,
-                version: dataset.datasetv2.version,
-                issued: dataset.datasetv2.issued,
-                modified: dataset.datasetv2.modified,
-                source: dataset.datasetv2.summary.publisher.name,
-            };
-        });
-
-        return mappedDatasets;
+        return datasets;
     }
 
     public async getDataset(pid: string) {
-        const datasets = await Datasets.find({ persistentId: pid }).sort({ 'datasetv2.version': -1 }).select('datasetv2').lean();
 
-        if (datasets.length > 0) {
-            return datasets[0].datasetv2;
+        // The files directory contains a set of example JSON files
+        const files = fs.readdirSync("./files");
+
+        for (let i = 0; i < files.length; i++)
+        {
+            const file = fs.readFileSync("./files/" + files[i], 'utf-8');
+            const parsedJSON = JSON.parse(file);
+
+            // This is the dataset the user is looking for
+            if (parsedJSON.identifier == pid)
+            {
+                return {
+                    persistentId : parsedJSON.identifier,
+                    "@schema" : parsedJSON["@schema"],
+                    version : parsedJSON.version,
+                    issued : parsedJSON.issued,
+                    modified : parsedJSON.modified,
+                    name : parsedJSON.summary.title,
+                    description : parsedJSON.summary.abstract,
+                    type : "dataset",
+                    source : parsedJSON.summary.publisher.name,
+                    self : "http://example-url.com/api/datasets/" + parsedJSON.identifier
+                }
+            }
+
         }
-
         return;
     }
 
     public async getDatasetCount() {
-        const count = await Datasets.count({ status: 'active' });
-
-        return count;
+        const files = fs.readdirSync("./files");
+        return files.length;
     }
 }
