@@ -1,0 +1,22 @@
+{
+    "items": [
+        {
+            "name": "HDRUK Simulation Test Server 1",
+            "@schema": "https://raw.githubusercontent.com/HDRUK/schemata/master/schema/dataset/2.1.0/dataset.schema.json",
+            "description": "Sample description here",
+            "type": "dataset",
+            "persistentId": "e96e36ba-30ca-4c25-bc55-fab02d72a51c",
+            "self": "https://fair.preview.aridhia.io/api/datasets/e96e36ba-30ca-4c25-bc55-fab02d72a51c",
+            "version": "0.0.0",
+            "issued": "2023-02-13T14:10:31.640Z",
+            "modified": "2023-09-04T10:53:01.239Z",
+            "source": "HDRUK"
+        }
+    ],
+    "query": {
+        "q": "",
+        "total": 1,
+        "limit": 0,
+        "offset": 0
+    }
+}
