@@ -7,33 +7,7 @@ export default class DatasetService {
 
         const file = fs.readFileSync("./files/list.json", 'utf-8');
         const parsedJSON = JSON.parse(file);
-        const datasetData = {
-            persistentId : parsedJSON.identifier,
-            "@schema" : parsedJSON["@schema"],
-            version : parsedJSON.version,
-            issued : parsedJSON.issued,
-            modified : parsedJSON.modified,
-            name : parsedJSON.summary.title,
-            description : parsedJSON.summary.abstract,
-            type : "dataset",
-            source : parsedJSON.summary.publisher.name,
-            self : "http://example-url.com/api/datasets/" + parsedJSON.identifier
-        }
-
-        datasets.push(datasetData);
-
-        // Check the offset is valid
-        if (offset < datasets.length)
-        {
-            datasets = datasets.slice(offset);
-        }
-
-        if (!isNaN(limit) && limit > 0)
-        {
-            datasets = datasets.slice(0, limit);
-        }
-
-        return datasets;
+        return parsedJSON;
     }
 
     public async getDataset(pid: string) {

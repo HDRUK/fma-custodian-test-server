@@ -26,7 +26,7 @@ export default class DatasetController extends BaseController {
 
             return res
                 .status(200)
-                .json({ query: { q: q || '', total: datasetTotal, limit: limitInt, offset: offsetInt }, items: datasets });
+                .json(datasets);
         } catch (err) {
             this._logger.sendDataInLogging({ data: err.name }, 'ERROR');
             this._logger.sendDataInLogging({ data: (<Error>err).message }, 'ERROR');
