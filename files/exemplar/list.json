@@ -26,7 +26,7 @@
         },
         {
             "name": "UKBiobank with tissues",
-            "@schema": "https://raw.githubusercontent.com/HDRUK/schemata-2/master/hdr_schemata/models/HDRUK/2.1.2/schema.json",
+            "@schema": "https://raw.githubusercontent.com/HDRUK/schemata-2/master/hdr_schemata/models/HDRUK/2.2.0/schema.json",
             "description": "Examplar UKBiobank",
             "type": "dataset",
             "persistentId": "1460e2b4-a985-4890-8e60-a21e78ce01f3",
