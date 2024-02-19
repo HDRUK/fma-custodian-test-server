@@ -36,7 +36,9 @@ const initApplication = async () => {
         res.status(404).end('404 - not found');
     });
 
-    await Database.init();
+    if (Locals.config().MONGO_DATABASE != '') {
+        await Database.init();
+    }
 
     app.listen(port, () => {
         process.stdout.write(`Service running @ 'http://localhost:${port}'\n`);

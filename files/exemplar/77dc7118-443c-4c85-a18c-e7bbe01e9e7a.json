@@ -1,0 +1,581 @@
+{
+    "identifier": "https://web.www.healthdatagateway.org/77dc7118-443c-4c85-a18c-e7bbe01e9e7a",
+    "version": "1.0.0",
+    "issued": "2021-09-23T00:00:00.000Z",
+    "modified": "2021-09-23T00:00:00.000Z",
+    "revisions": [],
+    "summary": {
+        "title": "1958 National Child Development Study - Pain data",
+        "abstract": "This collection specifically relates to a short pain survey (self-completion booklet) completed by NCDS participants in 2002-3.",
+        "publisher": {
+            "identifier": "https://web.www.healthdatagateway.org/613b2174b8b58d157f531e7a",
+            "name": "ALLEVIATE",
+            "logo": null,
+            "description": null,
+            "contactPoint": null,
+            "memberOf": "HUB"
+        },
+        "contactPoint": "blah@blah.com",
+        "keywords": "Alleviate,Pain,Pain Hub",
+        "alternateIdentifiers": null,
+        "doiName": "10.5255/UKDA-SN-8731-1"
+    },
+    "documentation": {
+        "description": "The 1958 National Child Development Study (NCDS) is following the lives of an initial 17,415 people born in England, Scotland and Wales in a single week of 1958. It started in 1958 at birth, as the Perinatal Mortality Survey. Over the course of cohort members\u2019 lives, information has been collected on their physical and educational development, economic circumstances, employment, family life, health behaviour, wellbeing, social participation and attitudes.\n\nThis collection specifically relates to a short pain survey (self-completion booklet) completed by NCDS participants in 2002-3.",
+        "associatedMedia": "https://discovery.closer.ac.uk/item/uk.cls.ncds/107fe7d5-b871-463e-853c-a592552b591a/1",
+        "isPartOf": "https://cls.ucl.ac.uk/cls-studies/1958-national-child-development-study-2/"
+    },
+    "coverage": {
+        "spatial": "https://www.geonames.org/2648147/great-britain.html",
+        "typicalAgeRange": "31-59",
+        "physicalSampleAvailability": null,
+        "followup": "> 10 YEARS",
+        "pathway": "Data are not associated with a patient pathway."
+    },
+    "provenance": {
+        "origin": {
+            "purpose": "STUDY",
+            "source": "PAPER BASED",
+            "collectionSituation": "COMMUNITY,HOME"
+        },
+        "temporal": {
+            "accrualPeriodicity": "STATIC",
+            "distributionReleaseDate": "2004-03-31",
+            "startDate": "2002-09-01",
+            "endDate": "2004-03-31",
+            "timeLag": "1-2 MONTHS"
+        }
+    },
+    "accessibility": {
+        "usage": {
+            "dataUseLimitation": "GENERAL RESEARCH USE",
+            "dataUseRequirements": "PROJECT SPECIFIC RESTRICTIONS",
+            "resourceCreator": "UK Data Services",
+            "investigations": "https://www.ukri.org/news/new-data-hub-and-research-into-chronic-pain/",
+            "isReferencedBy": "http://repec.ioe.ac.uk/REPEc/pdf/qsswp2128.pdf"
+        },
+        "access": {
+            "accessRights": "https://beta.ukdataservice.ac.uk/datacatalogue/studies/study?id=8731#!/access-data",
+            "accessService": "The Data Collection is available to users registered with the UK Data Service.\n\nCommercial use of the data requires approval from the data owner or their nominee. The UK Data Service will contact you.",
+            "accessRequestCost": "https://beta.ukdataservice.ac.uk/datacatalogue/studies/study?id=8731#!/access-data",
+            "deliveryLeadTime": null,
+            "jurisdiction": "GB-GB",
+            "dataProcessor": "George Ploubidis. Professor of Population Health and Statistics at the UCL Social Research Institute.",
+            "dataController": "University College London is the Data Controller and is committed to protecting the rights of individuals in line with the Data Protection Act 2018 (DPA) and the new General Data Protection Regulation (GDPR).\n\nYour test result and unique ID will be retained by Thriva for three years. No other information will be retained by Thriva. The Department for Health and Social Care are the Data Controller for the data that will be retained by Thriva."
+        },
+        "formatAndStandards": {
+            "vocabularyEncodingScheme": "NHS NATIONAL CODES,OTHER,LOCAL",
+            "conformsTo": "NHS DATA DICTIONARY",
+            "language": "en",
+            "format": "Text"
+        }
+    },
+    "enrichmentAndLinkage": {
+        "qualifiedRelation": "https://cls.ucl.ac.uk/data_documentation/?studies%5B%5D=age-42-sweep&studies%5B%5D=substudies&studies%5B%5D=ncds-birth-sweep&studies%5B%5D=age-7-sweep&studies%5B%5D=age-11-sweep&studies%5B%5D=age-16-sweep&studies%5B%5D=age-23-sweep&studies%5B%5D=age-33-sweep&studies%5B%5D=age-44-biomedical-sweep&studies%5B%5D=age-46-sweep&studies%5B%5D=age-50-sweep&studies%5B%5D=age-55-sweep&studies%5B%5D=age-62-sweep&s=&filter=1",
+        "derivation": "Not Known",
+        "tools": null
+    },
+    "observations": [
+        {
+            "observedNode": "FINDINGS",
+            "measuredValue": 8565,
+            "observationDate": "2002-09-01",
+            "measuredProperty": "Count",
+            "disambiguatingDescription": "Self-reported pain questionnaire"
+        }
+    ],
+    "structuralMetadata": [
+        {
+            "name": "NCDS Biomedical Paper Self-Completion 1 (2002) Dataset (85 of 172)",
+            "elements": [
+                {
+                    "name": "BE1",
+                    "description": "SC1 (E1): Pain during the last month lasting > one day",
+                    "dataType": "Frequency",
+                    "sensitive": false
+                }
+            ],
+            "description": null
+        },
+        {
+            "name": "NCDS Biomedical Paper Self-Completion 1 (2002) Dataset (85 of 172)",
+            "elements": [
+                {
+                    "name": "BE2",
+                    "description": "SC1 (E2): Have you been aware of this pain for > 3 months",
+                    "dataType": "Frequency",
+                    "sensitive": false
+                }
+            ],
+            "description": null
+        },
+        {
+            "name": "NCDS Biomedical Paper Self-Completion 1 (2002) Dataset (85 of 172)",
+            "elements": [
+                {
+                    "name": "E3_ACR1",
+                    "description": "SC1 (E3): ACRU Pain Definition - Left Upper",
+                    "dataType": "Frequency",
+                    "sensitive": false
+                }
+            ],
+            "description": null
+        },
+        {
+            "name": "NCDS Biomedical Paper Self-Completion 1 (2002) Dataset (85 of 172)",
+            "elements": [
+                {
+                    "name": "E3_ACR2",
+                    "description": "SC1 (E3): ACRU Pain Definition - Right Upper",
+                    "dataType": "Frequency",
+                    "sensitive": false
+                }
+            ],
+            "description": null
+        },
+        {
+            "name": "NCDS Biomedical Paper Self-Completion 1 (2002) Dataset (85 of 172)",
+            "elements": [
+                {
+                    "name": "E3_ACR3",
+                    "description": "SC1 (E3): ACRU Pain Definition - Left Lower",
+                    "dataType": "Frequency",
+                    "sensitive": false
+                }
+            ],
+            "description": null
+        },
+        {
+            "name": "NCDS Biomedical Paper Self-Completion 1 (2002) Dataset (85 of 172)",
+            "elements": [
+                {
+                    "name": "E3_ACR4",
+                    "description": "SC1 (E3): ACRU Pain Definition - Right Lower",
+                    "dataType": "Frequency",
+                    "sensitive": false
+                }
+            ],
+            "description": null
+        },
+        {
+            "name": "NCDS Biomedical Paper Self-Completion 1 (2002) Dataset (85 of 172)",
+            "elements": [
+                {
+                    "name": "E3_ACR5",
+                    "description": "SC1 (E3): ACRU Pain Definition - Upper Spine",
+                    "dataType": "Frequency",
+                    "sensitive": false
+                }
+            ],
+            "description": null
+        },
+        {
+            "name": "NCDS Biomedical Paper Self-Completion 1 (2002) Dataset (85 of 172)",
+            "elements": [
+                {
+                    "name": "E3_ACR6",
+                    "description": "SC1 (E3): ACRU Pain Definition - Left: Low Back",
+                    "dataType": "Frequency",
+                    "sensitive": false
+                }
+            ],
+            "description": null
+        },
+        {
+            "name": "NCDS Biomedical Paper Self-Completion 1 (2002) Dataset (85 of 172)",
+            "elements": [
+                {
+                    "name": "E3_ACR7",
+                    "description": "SC1 (E3): ACRU Pain Definition - Lower Spine",
+                    "dataType": "Frequency",
+                    "sensitive": false
+                }
+            ],
+            "description": null
+        },
+        {
+            "name": "NCDS Biomedical Paper Self-Completion 1 (2002) Dataset (85 of 172)",
+            "elements": [
+                {
+                    "name": "E3_ACR8",
+                    "description": "SC1 (E3): ACRU Pain Definition - Right: Low Back",
+                    "dataType": "Frequency",
+                    "sensitive": false
+                }
+            ],
+            "description": null
+        },
+        {
+            "name": "NCDS Biomedical Paper Self-Completion 1 (2002) Dataset (85 of 172)",
+            "elements": [
+                {
+                    "name": "E3_ACR9",
+                    "description": "SC1 (E3): ACRU Pain Definition - Left Buttock",
+                    "dataType": "Frequency",
+                    "sensitive": false
+                }
+            ],
+            "description": null
+        },
+        {
+            "name": "NCDS Biomedical Paper Self-Completion 1 (2002) Dataset (85 of 172)",
+            "elements": [
+                {
+                    "name": "E3_ACR10",
+                    "description": "SC1 (E3): ACRU Pain Definition - Right Buttock",
+                    "dataType": "Frequency",
+                    "sensitive": false
+                }
+            ],
+            "description": null
+        },
+        {
+            "name": "NCDS Biomedical Paper Self-Completion 1 (2002) Dataset (85 of 172)",
+            "elements": [
+                {
+                    "name": "E3_MAN1",
+                    "description": "SC1 (E3): Manchester Pain Definition - Right Shoulder",
+                    "dataType": "Frequency",
+                    "sensitive": false
+                }
+            ],
+            "description": null
+        },
+        {
+            "name": "NCDS Biomedical Paper Self-Completion 1 (2002) Dataset (85 of 172)",
+            "elements": [
+                {
+                    "name": "E3_MAN2",
+                    "description": "SC1 (E3): Manchester Pain Definition - Right Elbow",
+                    "dataType": "Frequency",
+                    "sensitive": false
+                }
+            ],
+            "description": null
+        },
+        {
+            "name": "NCDS Biomedical Paper Self-Completion 1 (2002) Dataset (85 of 172)",
+            "elements": [
+                {
+                    "name": "E3_MAN3",
+                    "description": "SC1 (E3): Manchester Pain Definition - Right Forearm",
+                    "dataType": "Frequency",
+                    "sensitive": false
+                }
+            ],
+            "description": null
+        },
+        {
+            "name": "NCDS Biomedical Paper Self-Completion 1 (2002) Dataset (85 of 172)",
+            "elements": [
+                {
+                    "name": "E3_MAN4",
+                    "description": "SC1 (E3): Manchester Pain Definition - Right Hand",
+                    "dataType": "Frequency",
+                    "sensitive": false
+                }
+            ],
+            "description": null
+        },
+        {
+            "name": "NCDS Biomedical Paper Self-Completion 1 (2002) Dataset (85 of 172)",
+            "elements": [
+                {
+                    "name": "E3_MAN5",
+                    "description": "SC1 (E3): Manchester Pain Definition - Left Shoulder",
+                    "dataType": "Frequency",
+                    "sensitive": false
+                }
+            ],
+            "description": null
+        },
+        {
+            "name": "NCDS Biomedical Paper Self-Completion 1 (2002) Dataset (85 of 172)",
+            "elements": [
+                {
+                    "name": "E3_MAN6",
+                    "description": "SC1 (E3): Manchester Pain Definition - Left Elbow",
+                    "dataType": "Frequency",
+                    "sensitive": false
+                }
+            ],
+            "description": null
+        },
+        {
+            "name": "NCDS Biomedical Paper Self-Completion 1 (2002) Dataset (85 of 172)",
+            "elements": [
+                {
+                    "name": "E3_MAN7",
+                    "description": "SC1 (E3): Manchester Pain Definition - Left Forearm",
+                    "dataType": "Frequency",
+                    "sensitive": false
+                }
+            ],
+            "description": null
+        },
+        {
+            "name": "NCDS Biomedical Paper Self-Completion 1 (2002) Dataset (85 of 172)",
+            "elements": [
+                {
+                    "name": "E3_MAN8",
+                    "description": "SC1 (E3): Manchester Pain Definition - Left Hand",
+                    "dataType": "Frequency",
+                    "sensitive": false
+                }
+            ],
+            "description": null
+        },
+        {
+            "name": "NCDS Biomedical Paper Self-Completion 1 (2002) Dataset (85 of 172)",
+            "elements": [
+                {
+                    "name": "E3_MAN9",
+                    "description": "SC1 (E3): Manchester Pain Definition - Right Thigh",
+                    "dataType": "Frequency",
+                    "sensitive": false
+                }
+            ],
+            "description": null
+        },
+        {
+            "name": "NCDS Biomedical Paper Self-Completion 1 (2002) Dataset (85 of 172)",
+            "elements": [
+                {
+                    "name": "E3_MAN10",
+                    "description": "SC1 (E3): Manchester Pain Definition - Right Knee",
+                    "dataType": "Frequency",
+                    "sensitive": false
+                }
+            ],
+            "description": null
+        },
+        {
+            "name": "NCDS Biomedical Paper Self-Completion 1 (2002) Dataset (85 of 172)",
+            "elements": [
+                {
+                    "name": "E3_MAN11",
+                    "description": "SC1 (E3): Manchester Pain Definition - Right Lower Leg",
+                    "dataType": "Frequency",
+                    "sensitive": false
+                }
+            ],
+            "description": null
+        },
+        {
+            "name": "NCDS Biomedical Paper Self-Completion 1 (2002) Dataset (85 of 172)",
+            "elements": [
+                {
+                    "name": "E3_MAN12",
+                    "description": "SC1 (E3): Manchester Pain Definition - Right Foot",
+                    "dataType": "Frequency",
+                    "sensitive": false
+                }
+            ],
+            "description": null
+        },
+        {
+            "name": "NCDS Biomedical Paper Self-Completion 1 (2002) Dataset (85 of 172)",
+            "elements": [
+                {
+                    "name": "E3_MAN13",
+                    "description": "SC1 (E3): Manchester Pain Definition - Left Thigh",
+                    "dataType": "Frequency",
+                    "sensitive": false
+                }
+            ],
+            "description": null
+        },
+        {
+            "name": "NCDS Biomedical Paper Self-Completion 1 (2002) Dataset (85 of 172)",
+            "elements": [
+                {
+                    "name": "E3_MAN14",
+                    "description": "SC1 (E3): Manchester Pain Definition - Left Knee",
+                    "dataType": "Frequency",
+                    "sensitive": false
+                }
+            ],
+            "description": null
+        },
+        {
+            "name": "NCDS Biomedical Paper Self-Completion 1 (2002) Dataset (85 of 172)",
+            "elements": [
+                {
+                    "name": "E3_MAN15",
+                    "description": "SC1 (E3): Manchester Pain Definition - Left Lower Leg",
+                    "dataType": "Frequency",
+                    "sensitive": false
+                }
+            ],
+            "description": null
+        },
+        {
+            "name": "NCDS Biomedical Paper Self-Completion 1 (2002) Dataset (85 of 172)",
+            "elements": [
+                {
+                    "name": "E3_MAN16",
+                    "description": "SC1 (E3): Manchester Pain Definition - Left Foot",
+                    "dataType": "Frequency",
+                    "sensitive": false
+                }
+            ],
+            "description": null
+        },
+        {
+            "name": "NCDS Biomedical Paper Self-Completion 1 (2002) Dataset (85 of 172)",
+            "elements": [
+                {
+                    "name": "E3_MAN17",
+                    "description": "SC1 (E3): Manchester Pain Definition - Head",
+                    "dataType": "Frequency",
+                    "sensitive": false
+                }
+            ],
+            "description": null
+        },
+        {
+            "name": "NCDS Biomedical Paper Self-Completion 1 (2002) Dataset (85 of 172)",
+            "elements": [
+                {
+                    "name": "E3_MAN18",
+                    "description": "SC1 (E3): Manchester Pain Definition - Throat / Sternum",
+                    "dataType": "Frequency",
+                    "sensitive": false
+                }
+            ],
+            "description": null
+        },
+        {
+            "name": "NCDS Biomedical Paper Self-Completion 1 (2002) Dataset (85 of 172)",
+            "elements": [
+                {
+                    "name": "E3_MAN19",
+                    "description": "SC1 (E3): Manchester Pain Definition - Right Chest",
+                    "dataType": "Frequency",
+                    "sensitive": false
+                }
+            ],
+            "description": null
+        },
+        {
+            "name": "NCDS Biomedical Paper Self-Completion 1 (2002) Dataset (85 of 172)",
+            "elements": [
+                {
+                    "name": "E3_MAN20",
+                    "description": "SC1 (E3): Manchester Pain Definition - Left Chest",
+                    "dataType": "Frequency",
+                    "sensitive": false
+                }
+            ],
+            "description": null
+        },
+        {
+            "name": "NCDS Biomedical Paper Self-Completion 1 (2002) Dataset (85 of 172)",
+            "elements": [
+                {
+                    "name": "E3_MAN21",
+                    "description": "SC1 (E3): Manchester Pain Definition - Abdomen",
+                    "dataType": "Frequency",
+                    "sensitive": false
+                }
+            ],
+            "description": null
+        },
+        {
+            "name": "NCDS Biomedical Paper Self-Completion 1 (2002) Dataset (85 of 172)",
+            "elements": [
+                {
+                    "name": "E3_MAN22",
+                    "description": "SC1 (E3): Manchester Pain Definition - Left Upper Back",
+                    "dataType": "Frequency",
+                    "sensitive": false
+                }
+            ],
+            "description": null
+        },
+        {
+            "name": "NCDS Biomedical Paper Self-Completion 1 (2002) Dataset (85 of 172)",
+            "elements": [
+                {
+                    "name": "E3_MAN23",
+                    "description": "SC1 (E3): Manchester Pain Definition - Right Upper Back",
+                    "dataType": "Frequency",
+                    "sensitive": false
+                }
+            ],
+            "description": null
+        },
+        {
+            "name": "NCDS Biomedical Paper Self-Completion 1 (2002) Dataset (85 of 172)",
+            "elements": [
+                {
+                    "name": "E3_MAN24",
+                    "description": "SC1 (E3): Manchester Pain Definition - Upper Spine",
+                    "dataType": "Frequency",
+                    "sensitive": false
+                }
+            ],
+            "description": null
+        },
+        {
+            "name": "NCDS Biomedical Paper Self-Completion 1 (2002) Dataset (85 of 172)",
+            "elements": [
+                {
+                    "name": "E3_MAN25",
+                    "description": "SC1 (E3): Manchester Pain Definition - Left Low Back",
+                    "dataType": "Frequency",
+                    "sensitive": false
+                }
+            ],
+            "description": null
+        },
+        {
+            "name": "NCDS Biomedical Paper Self-Completion 1 (2002) Dataset (85 of 172)",
+            "elements": [
+                {
+                    "name": "E3_MAN26",
+                    "description": "SC1 (E3): Manchester Pain Definition - Right Low Back",
+                    "dataType": "Frequency",
+                    "sensitive": false
+                }
+            ],
+            "description": null
+        },
+        {
+            "name": "NCDS Biomedical Paper Self-Completion 1 (2002) Dataset (85 of 172)",
+            "elements": [
+                {
+                    "name": "E3_MAN27",
+                    "description": "SC1 (E3): Manchester Pain Definition - Lower Spine",
+                    "dataType": "Frequency",
+                    "sensitive": false
+                }
+            ],
+            "description": null
+        },
+        {
+            "name": "NCDS Biomedical Paper Self-Completion 1 (2002) Dataset (85 of 172)",
+            "elements": [
+                {
+                    "name": "E3_MAN28",
+                    "description": "SC1 (E3): Manchester Pain Definition - Left Buttock",
+                    "dataType": "Frequency",
+                    "sensitive": false
+                }
+            ],
+            "description": null
+        },
+        {
+            "name": "NCDS Biomedical Paper Self-Completion 1 (2002) Dataset (85 of 172)",
+            "elements": [
+                {
+                    "name": "E3_MAN29",
+                    "description": "SC1 (E3): Manchester Pain Definition - Right Buttock",
+                    "dataType": "Frequency",
+                    "sensitive": false
+                }
+            ],
+            "description": null
+        }
+    ]
+}

@@ -1,0 +1,142 @@
+{
+    "identifier": "https://web.www.healthdatagateway.org/1460e2b4-a985-4890-8e60-a21e78ce01f3",
+    "version": "2.0.0",
+    "issued": "2022-04-19T00:00:00.000Z",
+    "modified": "2022-04-19T00:00:00.000Z",
+    "revisions": [],
+    "summary": {
+        "title": "UK Biobank",
+        "abstract": "UK Biobank is a large-scale biomedical database and research resource that provides researchers access to detailed longitudinal phenotype, medical and genetic data from 500,000 volunteer participants. ",
+        "publisher": {
+            "identifier": "https://web.www.healthdatagateway.org/607db9c6e1f9d3704d570d7f",
+            "name": "UK Biobank",
+            "logo": null,
+            "description": null,
+            "contactPoint": null,
+            "memberOf": "ALLIANCE"
+        },
+        "contactPoint": "access@ukbiobank.ac.uk",
+        "keywords": "UK BIOBANK,Genomics,Exome sequencing,WGS,Omics,Pain,Research,Cognitive Measures,Physical Measures,Magnetic resonance imaging,DXA,ECG,Accelerometer,Mental Health,Environment,Primary Care,COVID-19,Hospital episode statistics,Cancer Registry,Deaths,Sociodemographics,Digestive Health,Occupational Health,Biomarkers,Lifestyle,Health Data,Cardiac MRI,Brain MRI,Abdominal MRI,Carotid Ultrasound,Diet,Pain Hub",
+        "alternateIdentifiers": null,
+        "doiName": null,
+        "datasetType": "Biobank",
+        "datasetSubType": "Biobank",
+        "populationSize": 500000
+    },
+    "documentation": {
+        "description": "UK Biobank is a large-scale biomedical database and research resource, containing in-depth genetic and health information from half a million UK participants. The database, which is regularly augmented with additional data, is globally accessible to approved researchers and scientists undertaking vital research into the most common and life-threatening diseases. UK Biobank’s research resource is a major contributor to the advancement of modern medicine and treatment and has enabled several scientific discoveries that improve human health.\n\nSince 2006, UK Biobank has collected an unprecedented amount of biological and medical data on half a million people, aged between 40 and 69 years old and living in the UK, as part of a large-scale prospective study. With their consent they regularly provide blood, urine and saliva samples, as well as detailed information about their lifestyle which is then linked to their health-related records to provide a deeper understanding of how individuals experience diseases. Genotyping, whole exome sequencing and whole genome sequencing is available for the whole cohort. Blood and urine biomarkers, telomere data, metabolomic and proteomic data and infectious disease markers have been assayed from the samples provided.\n\nSince 2014 we have been undertaking the largest imaging study to date. We aim to undertake brain, cardiac and neck to knee MRI, whole body DXA and carotid ultrasound of 100,000 participants. We additionally have retinal images for 100,000 participants from baseline assessment, and accelerometer data for 100,000 participants collected 2013-2014.\n\nQuestionnaires that aim to capture data that is not readily captured by health data linkages are regularly sent to our participants.\n\nThe data – the largest and richest dataset of its kind – is de-identified and made widely accessible by UK Biobank to registered researchers around the world who use it to make new scientific discoveries about common and life-threatening diseases – such as cancer, heart disease and stroke – in order to improve public health.",
+        "associatedMedia": "https://biobank.ndph.ox.ac.uk/showcase/index.cgi,https://www.ukbiobank.ac.uk/",
+        "isPartOf": null
+    },
+    "coverage": {
+        "spatial": "United Kingdom",
+        "typicalAgeRange": "40-69",
+        "followup": "CONTINUOUS",
+        "pathway": "UK Biobank is a volunteer based cohort. As such, there is a healthy volunteer effect that results in participants tending to be of higher socioeconomic status, remaining in education longer, slimmer, less smokers (although those that smoke tend to be heavier smokers) and lower consumers of alcohol than the general population. A comparison between UK Biobank participants and the general UK population has been published (https://doi.org/10.1093/aje/kwx246).\n\nWhilst selection biases are seen in UK Biobank, there is still substantial heterogeneity within the cohort. Whilst incidence and prevalence calculations are not generalisable to the UK population, exposure-outcome comparisons should be due to the heterogeneity in the cohort. However, it is important that researchers consider the potential biases of a data set that might limit generalisability of their results (as is the case for all observational data). ",
+        "biologicalsamples": ["Saliva", "Urine"],
+        "gender": null,
+        "psychological": null,
+        "physical": null,
+        "anthropometric": null,
+        "lifestyle": null,
+        "socioeconomic": null
+    },
+    "provenance": {
+        "origin": {
+            "purpose": "STUDY",
+            "source": "EPR,ELECTRONIC SURVEY,MACHINE GENERATED",
+            "collectionSituation": "PRIMARY CARE,ACCIDENT AND EMERGENCY,IN-PATIENTS,COMMUNITY,CLINIC,PHARMACY"
+        },
+        "temporal": {
+            "distributionReleaseDate": null,
+            "startDate": "2006-03-13",
+            "endDate": null,
+            "timeLag": "VARIABLE",
+            "publishingFrequency": "CONTINUOUS"
+        }
+    },
+    "accessibility": {
+        "usage": {
+            "dataUseLimitation": "GENERAL RESEARCH USE",
+            "dataUseRequirements": "INSTITUTION SPECIFIC RESTRICTIONS,PROJECT SPECIFIC RESTRICTIONS,PUBLICATION REQUIRED,RETURN TO DATABASE OR RESOURCE,USER SPECIFIC RESTRICTION,TIME LIMIT ON USE",
+            "resourceCreator": "UK Biobank",
+            "investigations": "https://www.ukbiobank.ac.uk/enable-your-research/approved-research",
+            "isReferencedBy": "Sudlow C, Gallacher J, Allen N, Beral V, Burton P, Danesh J, et al. (2015) UK Biobank: An Open Access Resource for Identifying the Causes of a Wide Range of Complex Diseases of Middle and Old Age. PLoS Med 12(3): e1001779. https://doi.org/10.1371/journal.pmed.1001779,Bycroft, C., Freeman, C., Petkova, D. et al. The UK Biobank resource with deep phenotyping and genomic data. Nature 562, 203–209 (2018). https://doi.org/10.1038/s41586-018-0579-z,Conroy M, Sellors J, Effingham M, et al. The advantages of UK Biobank’s open-access strategy for health research. J Intern Med. 2019;286(4):389-397. doi:10.1111/joim.12955,Littlejohns TJ, Holliday J, Gibson LM, et al. The UK Biobank imaging enhancement of 100,000 participants: rationale, data collection, management and future directions. Nat Commun. 2020;11(1):2624. doi:10.1038/s41467-020-15948-9,Fry A, Littlejohns TJ, Sudlow C, et al. Comparison of Sociodemographic and Health-Related Characteristics of UK Biobank Participants With Those of the General Population. Am J Epidemiol. 2017:1-9. doi:10.1093/aje/kwx246"
+        },
+        "access": {
+            "accessRights": "https://www.ukbiobank.ac.uk/enable-your-research/apply-for-access",
+            "accessService": "Applications to access data are made through our bespoke access management system (https://bbams.ndph.ox.ac.uk/ams/). \n\nData access is either via data download (phenotype and genotype data) or via our Research Analysis Platform (phenotype, imaging, genotype, WES, WGS, omics). Our RAP is enabled by DNANexus and hosted by Amazon Web Services (https://www.ukbiobank.ac.uk/enable-your-research/research-analysis-platform). \n\nAccess costs depend on what data access is required.",
+            "accessRequestCost": "https://www.ukbiobank.ac.uk/enable-your-research/costs",
+            "deliveryLeadTime": null,
+            "jurisdiction": "GB-ENG",
+            "dataProcessor": "UK Biobank",
+            "dataController": "UK Biobank"
+        },
+        "formatAndStandards": {
+            "vocabularyEncodingScheme": "LOCAL,OPCS4,READ,SNOMED CT,DM+D,ICD10,ICD9",
+            "conformsTo": "DICOM,LOCAL,NHS DATA DICTIONARY",
+            "language": "en",
+            "format": "Text/csv, dta, SAS, R,Image/ DICOM, NIFTI, PNG,Other/ VCF, CRAM, PLINK, BGEN, BED, CWA"
+        }
+    },
+    "enrichmentAndLinkage": {
+        "qualifiedRelation": null,
+        "derivation": null,
+        "tools": null
+    },
+    "observations": [
+        {
+            "observedNode": "PERSONS",
+            "measuredValue": 500000,
+            "observationDate": "2006-03-13",
+            "measuredProperty": "Count",
+            "disambiguatingDescription": "Each participant has a large number (<5000) of data points associated with them. Recruitment started in 2006, but data collection is ongoing, and health data predates recruitment date. Summary statistics of all data can be found on our data showcase."
+        }
+    ],
+    "structuralMetadata": [
+        {
+            "name": "UK Biobank Data Dictionary",
+            "elements": [
+                {
+                    "name": 3,
+                    "description": "Verbal interview duration",
+                    "dataType": "Integer",
+                    "sensitive": false
+                }
+            ],
+            "description": null
+        }
+    ],
+    "tissuesSampleCollection": [
+        {
+            "materialType": ["Serum"],
+            "dataCategories": null,
+            "tissueSampleMetadata": null,
+            "collectionType": null
+        },
+        {
+            "materialType": ["Plasma"],
+            "dataCategories": null,
+            "tissueSampleMetadata": null,
+            "collectionType": null
+        },
+        {
+            "materialType": ["Blood"],
+            "dataCategories": null,
+            "tissueSampleMetadata": null,
+            "collectionType": null
+        },
+        {
+            "materialType": ["Saliva"],
+            "dataCategories": null,
+            "tissueSampleMetadata": null,
+            "collectionType": null
+        },
+        {
+            "materialType": ["Urine"],
+            "dataCategories": null,
+            "tissueSampleMetadata": null,
+            "collectionType": null
+        }
+    ]
+}
