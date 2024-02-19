@@ -4,7 +4,7 @@ run-name: ${{ github.actor }} triggered deploy to DEV pipeline
 on:
   push:
     branches:
-      - 'add/exemplar-datasets'
+      - 'main'
 
 env:
   PROJECT_ID: '${{ secrets.PROJECT_ID }}'
@@ -22,7 +22,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
         with:
-          ref: add/exemplar-datasets
+          ref: main
 
       - name: Read VERSION file
         id: getversion
@@ -70,7 +70,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
         with:
-          ref: add/exemplar-datasets
+          ref: main
 
       - name: Google Auth
         id: auth
