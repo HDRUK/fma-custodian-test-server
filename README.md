@@ -1,6 +1,6 @@
 ## Custodian test server
 
-Example server matching the API specifications defined in https://editor.swagger.io/?url=https://raw.githubusercontent.com/HDRUK/schemata/fed-mdc-api/openapi/catalogue.yaml
+Example server matching the API specifications defined in https://editor.swagger.io/?url=https://raw.githubusercontent.com/HDRUK/schemata/fed-mdc-api/openapi/catalogue.yaml.
 
 ### Build and run
 
