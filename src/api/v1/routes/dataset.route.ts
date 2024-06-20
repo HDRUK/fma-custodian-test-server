@@ -13,6 +13,9 @@ const datasetController = new DatasetController(datasetService);
 router.get('/noauth/datasets', validateParams, datasetController.getDatasets);
 router.get('/noauth/datasets/:persistentId', datasetController.getDataset);
 
+router.get('/noauth/exemplar/datasets', validateParams, datasetController.getExemplarDatasets);
+router.get('/noauth/exemplar/datasets/:persistentId', datasetController.getExemplarDataset);
+
 // Protected endpoints - API key or OAuth access token
 router.get('/datasets', authorise('user'), validateParams, datasetController.getDatasets);
 router.get('/datasets/:persistentId', authorise('user'), datasetController.getDataset);

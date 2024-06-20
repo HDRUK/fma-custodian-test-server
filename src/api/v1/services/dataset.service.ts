@@ -5,20 +5,40 @@ export default class DatasetService {
     public async getDatasets(q: string, offset: number, limit: number): Promise<dataset[]> {
         let datasets = [];
 
-        const file = fs.readFileSync("./files/list.json", 'utf-8');
+        const file = fs.readFileSync('./files/list.json', 'utf-8');
         const parsedJSON = JSON.parse(file);
         return parsedJSON;
     }
 
     public async getDataset(pid: string) {
-        const file = fs.readFileSync("./files/dataset.json", 'utf-8');
+        const file = fs.readFileSync('./files/dataset.json', 'utf-8');
         const parsedJSON = JSON.parse(file);
 
         return parsedJSON;
     }
 
     public async getDatasetCount() {
-        const files = fs.readdirSync("./files");
+        const files = fs.readdirSync('./files');
+        return files.length;
+    }
+
+    public async getExemplarDatasets(q: string, offset: number, limit: number): Promise<dataset[]> {
+        let datasets = [];
+
+        const file = fs.readFileSync('./files/exemplar/list.json', 'utf-8');
+        const parsedJSON = JSON.parse(file);
+        return parsedJSON;
+    }
+
+    public async getExemplarDataset(pid: string) {
+        const file = fs.readFileSync(`./files/exemplar/${pid}.json`, 'utf-8');
+        const parsedJSON = JSON.parse(file);
+
+        return parsedJSON;
+    }
+
+    public async getExemplarDatasetCount() {
+        const files = fs.readdirSync('./files');
         return files.length;
     }
 }
