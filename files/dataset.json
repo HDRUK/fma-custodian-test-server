@@ -1,138 +1,131 @@
 {
-    "identifier": "e96e36ba-30ca-4c25-bc55-fab02d72a51c",
-    "version": "0.0.1",
-    "issued": "2020-08-10T00:00:00.000Z",
-    "modified": "2020-08-10T00:00:00.000Z",
-    "revisions": [],
+    "identifier": "https://web.www.healthdatagateway.org/dataset/a7ddefbd-31d9-4703-a738-256e4689f76a",
+    "version": "2.0.0",
     "summary": {
-        "title": "Bridge file: Hospital Episode Statistics to Diagnostic Imaging Dataset",
-        "abstract": "Linked Data Set - Hospital Episode Statistics to Diagnostic Imaging Data Set",
+        "title": "HDR UK Papers & Preprints",
+        "doiName": "10.1093/ije/dyx196",
+        "abstract": "Publications that mention HDR-UK (or any variant thereof) in Acknowledgements or Author Affiliations",
         "publisher": {
-            "identifier": "https://web.www.healthdatagateway.org/5f86cd34980f41c6f02261f4",
-            "name": "NHS DIGITAL",
-            "logo": null,
-            "description": null,
-            "contactPoint": null,
-            "memberOf": "ALLIANCE"
+            "name": "HEALTH DATA RESEARCH UK",
+            "memberOf": "OTHER",
+            "contactPoint": "susheel.varma@hdruk.ac.uk"
         },
-        "contactPoint": "enquiries@nhsdigital.nhs.uk",
-        "keywords": null,
-        "alternateIdentifiers": null,
-        "doiName": null
+        "contactPoint": "susheel.varma@hdruk.ac.uk",
+        "keywords": [
+            "Preprints",
+            "Papers",
+            "HDR UK"
+        ]
     },
     "documentation": {
-        "description": "Linked Data Set - Hospital Episode Statistics to Diagnostic Imaging Data Set",
-        "associatedMedia": null,
-        "isPartOf": null
+        "description": "Publications that mention HDR-UK (or any variant thereof) in Acknowledgements or Author Affiliations\n\nThis will include:\n- Papers\n- COVID-19 Papers\n- COVID-19 Preprint",
+        "associatedMedia": [
+            "https://github.com/HDRUK/papers"
+        ],
+        "isPartOf": "NOT APPLICABLE"
     },
-    "coverage": {
-        "spatial": "United Kingdom,England",
-        "typicalAgeRange": null,
-        "physicalSampleAvailability": null,
-        "followup": null,
-        "pathway": null
-    },
-    "provenance": {
-        "origin": {
-            "purpose": null,
-            "source": null,
-            "collectionSituation": null
+    "revisions": [
+        {
+            "version": "1.0.0",
+            "url": "https://d5faf9c6-6c34-46d7-93c4-7706a5436ed9"
         },
-        "temporal": {
-            "accrualPeriodicity": "MONTHLY",
-            "distributionReleaseDate": null,
-            "startDate": "2007-01-04",
-            "endDate": null,
-            "timeLag": "Not applicable"
+        {
+            "version": "2.0.0",
+            "url": "https://a7ddefbd-31d9-4703-a738-256e4689f76a"
+        },
+        {
+            "version": "0.0.1",
+            "url": "https://9e798632-442a-427b-8d0e-456f754d28dc"
+        },
+        {
+            "version": "2.1.1",
+            "url": "https://a7ddefbd-31d9-4703-a738-256e4689f76a"
         }
-    },
+    ],
+    "modified": "2021-01-28T14:15:46Z",
+    "issued": "2020-08-05T14:35:59Z",
     "accessibility": {
+        "formatAndStandards": {
+            "language": "en",
+            "vocabularyEncodingScheme": "OTHER",
+            "format": [],
+            "conformsTo": "OTHER"
+        },
         "usage": {
-            "dataUseLimitation": null,
-            "dataUseRequirements": null,
-            "resourceCreator": null,
-            "investigations": null,
-            "isReferencedBy": null
+            "dataUseLimitation": "GENERAL RESEARCH USE",
+            "resourceCreator": "HDR UK Science Team",
+            "dataUseRequirements": "RETURN TO DATABASE OR RESOURCE",
+            "isReferencedBy": [
+                "10.5281/zenodo.326615"
+            ],
+            "investigations": [
+                "https://github.com/HDRUK/papers"
+            ]
         },
         "access": {
-            "accessRights": "https://digital.nhs.uk/binaries/content/assets/website-assets/services/dars/nhs_digital_approved_edition_2_dsa_demo.pdf",
-            "accessService": null,
-            "accessRequestCost": null,
-            "deliveryLeadTime": null,
+            "dataController": "HDR UK",
             "jurisdiction": "GB-ENG",
-            "dataProcessor": null,
-            "dataController": null
-        },
-        "formatAndStandards": {
-            "vocabularyEncodingScheme": null,
-            "conformsTo": null,
-            "language": null,
-            "format": null
+            "dataProcessor": "HDR UK",
+            "accessService": "https://github.com/HDRUK/papers",
+            "accessRights": "https://raw.githubusercontent.com/HDRUK/papers/master/LICENSE",
+            "accessRequestCost": "Free",
+            "deliveryLeadTime": "OTHER"
         }
     },
-    "enrichmentAndLinkage": {
-        "qualifiedRelation": null,
-        "derivation": null,
-        "tools": null
+    "observations": [
+        {
+            "observedNode": "FINDINGS",
+            "measuredValue": 575,
+            "disambiguatingDescription": "Number of papers with affiliation and/or acknowledgement to HDR UK",
+            "observationDate": "2020-11-27",
+            "measuredProperty": "Count"
+        }
+    ],
+    "provenance": {
+        "temporal": {
+            "endDate": "2022-04-30",
+            "timeLag": "NOT APPLICABLE",
+            "distributionReleaseDate": "2020-11-27",
+            "accrualPeriodicity": "DAILY",
+            "startDate": "2020-03-31"
+        },
+        "origin": {
+            "purpose": "OTHER",
+            "source": "MACHINE GENERATED",
+            "collectionSituation": [
+                "OTHER"
+            ]
+        }
     },
-    "observations": [],
+    "coverage": {
+        "followup": "UNKNOWN",
+        "spatial": "https://www.geonames.org/countries/GB/united-kingdom.html",
+        "physicalSampleAvailability": [
+            "NOT AVAILABLE"
+        ],
+        "pathway": "NOT APPLICABLE",
+        "typicalAgeRange": "0-0"
+    },
+    "enrichmentAndLinkage": {
+        "tools": [
+            "https://github.com/HDRUK/papers"
+        ],
+        "qualifiedRelation": [
+            "https://web.www.healthdatagateway.org/dataset/fd8d0743-344a-4758-bb97-f8ad84a37357"
+        ],
+        "derivation": [
+            "https://web.www.healthdatagateway.org/dataset/fd8d0743-344a-4758-bb97-f8ad84a37357"
+        ]
+    },
     "structuralMetadata": [
         {
-            "name": "All Available Fields",
-            "description": null,
+            "name": "table1",
+            "description": "this is table 1",
             "elements": [
                 {
-                    "name": "All Available Fields",
-                    "description": "All Available Fields",
+                    "name": "column1",
+                    "description": "this is column1",
                     "dataType": "String",
-                    "sensitive": false
-                }
-            ]
-        },
-        {
-            "name": "General fields",
-            "description": null,
-            "elements": [
-                {
-                    "name": "MATCH_RANK",
-                    "description": null,
-                    "dataType": "Character",
-                    "sensitive": false
-                }
-            ]
-        },
-        {
-            "name": "General fields",
-            "description": null,
-            "elements": [
-                {
-                    "name": "HES_DIDS_VERSION",
-                    "description": null,
-                    "dataType": "Character",
-                    "sensitive": false
-                }
-            ]
-        },
-        {
-            "name": "General fields",
-            "description": null,
-            "elements": [
-                {
-                    "name": "SUBMISSIONDATAID",
-                    "description": null,
-                    "dataType": "Character",
-                    "sensitive": false
-                }
-            ]
-        },
-        {
-            "name": "General fields",
-            "description": null,
-            "elements": [
-                {
-                    "name": "ENCRYPTED_HESID",
-                    "description": null,
-                    "dataType": "Character",
                     "sensitive": false
                 }
             ]
