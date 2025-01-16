@@ -1,8 +1,4 @@
 {
-    "identifier": "e96e36ba-30ca-4c25-bc55-fab02d72a51c",
-    "version": "1.0.0",
-    "issued": "2020-08-10T00:00:00.000Z",
-    "modified": "2020-08-10T00:00:00.000Z",
         "required": {
                 "gatewayId": "1025",
                 "gatewayPid": "9b74159f-0251-4e06-aff2-b9740c080a54",
