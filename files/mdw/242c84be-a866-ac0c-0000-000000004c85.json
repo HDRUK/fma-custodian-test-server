@@ -1,1 +1,24 @@
-{"identifier":"242c84be-a866-ac0c-0000-000000000002","version":"1.0.2","revisions":[{"version":"1.0.2","url":"https://nhse-ics-kms-uat5-ui.metadata.works/browser/dataset?id=19589"}],"issued":"2024-01-29T17:01:20+00:00","modified":"2025-02-07T17:31:48+00:00","summary":{"title":"Sample Dataset","abstract":"Lorem ipsum dolor sit amet.","publisher":{"name":"Lorem","contactPoint":["test@test.com"],"memberOf":"OTHER"},"contactPoint":"jonny@metadataworks.co.uk","keywords":["Lorem","Ipsum"],"doiName":"10.81022/km18-jq14"},"provenance":{"origin":{},"temporal":{"accrualPeriodicity":"OTHER","distributionReleaseDate":"2025-02-07","timeLag":"OTHER"}},"accessibility":{"usage":{"resourceCreator":["Test"]},"access":{"accessRights":[],"jurisdiction":["GB-ENG"],"dataController":"  "}},"observations":[]}
+{
+    "identifier": "242c84be-a866-ac0c-0000-000000000002",
+    "version": "1.0.2",
+    "revisions": [{ "version": "1.0.2", "url": "https://nhse-ics-kms-uat5-ui.metadata.works/browser/dataset?id=19589" }],
+    "issued": "2024-01-29T17:01:20+00:00",
+    "modified": "2025-02-07T17:31:48+00:00",
+    "summary": {
+        "title": "Sample Dataset",
+        "abstract": "Lorem ipsum dolor sit amet.",
+        "publisher": { "name": "Lorem", "contactPoint": ["test@test.com"], "memberOf": "OTHER" },
+        "contactPoint": "jonny@metadataworks.co.uk",
+        "keywords": ["Lorem", "Ipsum"],
+        "doiName": "10.81022/km18-jq14"
+    },
+    "provenance": {
+        "origin": {},
+        "temporal": { "accrualPeriodicity": "OTHER", "distributionReleaseDate": "2025-02-07", "timeLag": "OTHER" }
+    },
+    "accessibility": {
+        "usage": { "resourceCreator": ["Test"] },
+        "access": { "accessRights": [], "jurisdiction": ["GB-ENG"], "dataController": "  " }
+    },
+    "observations": []
+}
