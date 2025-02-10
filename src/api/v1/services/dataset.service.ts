@@ -3,7 +3,7 @@ import fs from 'fs';
 
 export default class DatasetService {
     public async getDatasets(q: string, offset: number, limit: number): Promise<dataset[]> {
-        let datasets = [];
+        const datasets = [];
 
         const file = fs.readFileSync('./files/list.json', 'utf-8');
         const parsedJSON = JSON.parse(file);
@@ -23,15 +23,15 @@ export default class DatasetService {
     }
 
     public async getExemplarDatasets(q: string, offset: number, limit: number): Promise<dataset[]> {
-        let datasets = [];
+        const datasets = [];
 
-        const file = fs.readFileSync('./files/exemplar/list.json', 'utf-8');
+        const file = fs.readFileSync('./files/mdw/list.json', 'utf-8');
         const parsedJSON = JSON.parse(file);
         return parsedJSON;
     }
 
     public async getExemplarDataset(pid: string) {
-        const file = fs.readFileSync(`./files/exemplar/${pid}.json`, 'utf-8');
+        const file = fs.readFileSync(`./files/mdw/${pid}.json`, 'utf-8');
         const parsedJSON = JSON.parse(file);
 
         return parsedJSON;
