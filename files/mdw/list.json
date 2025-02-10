@@ -1,27 +1,16 @@
 {
-    "total": 3,
+    "total": 2,
     "items": [
         {
             "persistentId": "242c84be-a866-ac0c-0000-000000001bbd",
             "name": "Kent Integrated Dataset - GP Consultations",
             "description": "Primary Care Consultations information, recording the intereactions that patients with medical staff at GP practices",
-            "version": "1.0.0",
+            "version": "1.1.0",
             "self": "https://nhse-ics-kms-uat5-ui.metadata.works/api/federation/dataset/7101",
             "source": "",
             "@schema": "https://hdruk.github.io/schemata/schema/dataset/2.1.0/dataset.schema.json",
             "issued": "2024-03-09T23:22:05+00:00",
             "modified": "2024-07-03T09:54:34+00:00"
-        },
-        {
-            "persistentId": "242c84be-a866-ac0c-0000-000000001bbe",
-            "name": "Kent Integrated Dataset - GP Event",
-            "description": "Primary Care Event information, recording the intereactions that patients with medical staff at GP practices and some read-coded numeric data",
-            "version": "1.0.0",
-            "self": "https://nhse-ics-kms-uat5-ui.metadata.works/api/federation/dataset/7102",
-            "source": "",
-            "@schema": "https://hdruk.github.io/schemata/schema/dataset/2.1.0/dataset.schema.json",
-            "issued": "2024-03-09T23:22:07+00:00",
-            "modified": "2024-07-03T09:55:18+00:00"
         },
         {
             "persistentId": "242c84be-a866-ac0c-0000-000000004c85",
