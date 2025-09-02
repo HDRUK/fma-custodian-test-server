@@ -1,0 +1,27 @@
+name: Run quality checks
+run-name: ${{ github.actor }} triggered quality check pipeline
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  test:
+    timeout-minutes: 10
+    runs-on: ubuntu-latest    
+
+    steps:
+      - name: Checkout
+        id: checkout
+        uses: actions/checkout@v4
+
+      - name: NPM install
+        id: npminstall
+        run: "npm install"
+
+      - name: Run unit tests
+        id: unittests
+        run: "npm run test"
