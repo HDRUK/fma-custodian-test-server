@@ -2,10 +2,8 @@ import jwt from 'jsonwebtoken';
 import { Request, Response, NextFunction } from 'express';
 
 import Locals from '../config/locals';
-import AuthService from '../services/auth.service';
-import { CredentialsModel } from '../models/credentials.model';
 
-const authorise = (clientType: string) => {
+const authorise = () => {
     return async (req: Request, res: Response, next: NextFunction) => {
         const auth: any = req.headers['authorization'];
         const apiKeyEncoded: any = req.headers['apikey'];
@@ -38,26 +36,14 @@ const authorise = (clientType: string) => {
             if (token) {
                 const decodedToken: any = jwt.verify(token, Locals.config().JWTSecret);
 
-                if (clientType === 'admin') {
-                    const client: any = await CredentialsModel.findOne({ _id: decodedToken.data.id });
-
-                    if (client.clientType !== 'admin') {
-                        throw new Error();
-                    }
+                if (!decodedToken) {
+                   throw new Error();
                 }
 
                 return next();
             }
 
             if (apiKey) {
-                const client: any = await AuthService.authoriseKey(apiKey);
-
-                if (clientType === 'admin') {
-                    if (client.clientType !== 'admin') {
-                        throw new Error();
-                    }
-                }
-
                 return next();
             }
 
