@@ -25,7 +25,6 @@ export default class DatasetController extends BaseController {
             const limitInt = parseInt(limit);
             const offsetInt = parseInt(offset);
             const datasets = await this.datasetService.getDatasets(q, offsetInt, limitInt);
-            const datasetTotal = await this.datasetService.getDatasetCount();
 
             return res.status(200).json(datasets);
         } catch (err) {

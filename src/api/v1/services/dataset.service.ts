@@ -4,8 +4,10 @@ import fs from 'fs';
 export default class DatasetService {
     public async getDatasets(q: string, offset: number, limit: number): Promise<dataset[]> {
         const datasets = [];
+        console.log('hello')
 
         const file = fs.readFileSync('./files/list.json', 'utf-8');
+        console.log('<<<<< file', file)
         const parsedJSON = JSON.parse(file);
         return parsedJSON;
     }
