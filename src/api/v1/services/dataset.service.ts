@@ -3,20 +3,25 @@ import fs from 'fs';
 
 export default class DatasetService {
     public async getDatasets(q: string, offset: number, limit: number): Promise<dataset[]> {
-        const datasets = [];
-        console.log('hello')
-
         const file = fs.readFileSync('./files/list.json', 'utf-8');
-        console.log('<<<<< file', file)
+         const githubResponse = await fetch(
+            "https://raw.githubusercontent.com/HDRUK/schemata/dev/docs/HDRUK/4.0.0.example.json"
+        );
+        const githubJSON = await githubResponse.json();
         const parsedJSON = JSON.parse(file);
+        parsedJSON.items = [githubJSON];
         return parsedJSON;
     }
 
     public async getDataset(pid: string) {
-        const file = fs.readFileSync('./files/dataset.json', 'utf-8');
-        const parsedJSON = JSON.parse(file);
+                
+        const githubResponse = await fetch(
+            "https://raw.githubusercontent.com/HDRUK/schemata/dev/docs/HDRUK/4.0.0.example.json"
+        );
+        const githubJSON = await githubResponse.json();
 
-        return parsedJSON;
+
+        return githubJSON;
     }
 
     public async getDatasetCount() {
