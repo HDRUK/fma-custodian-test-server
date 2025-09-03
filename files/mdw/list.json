@@ -1,5 +1,5 @@
 {
-    "total": 2,
+    "total": 1,
     "items": [
         {
             "persistentId": "242c84be-a866-ac0c-0000-000000001bbe",
@@ -11,16 +11,6 @@
             "@schema": "https://hdruk.github.io/schemata/schema/dataset/2.1.0/dataset.schema.json",
             "issued": "2024-03-09T23:22:07+00:00",
             "modified": "2024-07-03T09:55:18+00:00"
-        },
-        {
-            "persistentId": "242c84be-a866-ac0c-0000-000000004c85",
-            "name": "Sample Dataset",
-            "version": "1.0.2",
-            "self": "https://nhse-ics-kms-uat5-ui.metadata.works/api/federation/dataset/19589",
-            "source": "",
-            "@schema": "https://hdruk.github.io/schemata/schema/dataset/2.1.0/dataset.schema.json",
-            "issued": "2024-01-29T17:01:20+00:00",
-            "modified": "2025-02-07T17:31:48+00:00"
         }
     ]
 }

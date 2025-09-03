@@ -9,11 +9,6 @@ Example server matching the API specifications defined in https://editor.swagger
 ```
 PORT="<port>"
 
-MONGO_USER="<username>" # Username with RW access to the relevant database
-MONGO_PASSWORD="<password>"
-MONGO_CLUSTER="<cluster>" # Relevant cluster
-MONGO_DATABASE="<database>" # Name of relevant database on cluster
-
 JWT_SECRET="<JWT Secret Key>"
 
 LOGGING_PROJECT_ID="<GCP project ID>"
@@ -161,7 +156,7 @@ As above.
 #### Access token
 
 ```
-POST /api/v1/oauth/token
+POST /oauth/token
 
 Authorise via the OAuth 2.0 client_credentials grant flow to generate an access token, or optionally use a verifiable refresh token to obtain further access tokens.
 

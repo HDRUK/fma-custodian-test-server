@@ -17,7 +17,7 @@ router.get('/noauth/exemplar/datasets', validateParams, datasetController.getExe
 router.get('/noauth/exemplar/datasets/:persistentId', datasetController.getExemplarDataset);
 
 // Protected endpoints - API key or OAuth access token
-router.get('/datasets', authorise('user'), validateParams, datasetController.getDatasets);
-router.get('/datasets/:persistentId', authorise('user'), datasetController.getDataset);
+router.get('/datasets', authorise(), validateParams, datasetController.getDatasets);
+router.get('/datasets/:persistentId', authorise(), datasetController.getDataset);
 
 export default router;

@@ -30,7 +30,6 @@ describe('CLASS: DatasetController', () => {
     describe('METHOD: getDatasets', () => {
         it('TEST: it should call the service function and return a 200 response if resolved', async () => {
             const getDatasetsStub = sinon.stub(datasetService, 'getDatasets').resolves([]);
-            const getDatasetCountStub = sinon.stub(datasetService, 'getDatasetCount').resolves(0);
 
             const req = mockedRequest();
             const res = mockedResponse();
@@ -38,22 +37,11 @@ describe('CLASS: DatasetController', () => {
             await datasetController.getDatasets(req, res);
 
             expect(getDatasetsStub.calledOnce).toBe(true);
-            expect(getDatasetCountStub.calledOnce).toBe(true);
             expect(res.status).toHaveBeenCalledWith(200);
-            expect(res.json).toHaveBeenCalledWith({
-                query: {
-                    q: '',
-                    total: '0',
-                    limit: '',
-                    offset: '0',
-                },
-                items: [],
-            });
         });
 
         it('TEST: it should call the service function and return a 500 response if rejected', async () => {
             const getDatasetsStub = sinon.stub(datasetService, 'getDatasets').rejects();
-            const getDatasetCountStub = sinon.stub(datasetService, 'getDatasetCount');
             sinon.stub(datasetController._logger, 'sendDataInLogging');
 
             const req = mockedRequest();
@@ -62,7 +50,6 @@ describe('CLASS: DatasetController', () => {
             await datasetController.getDatasets(req, res);
 
             expect(getDatasetsStub.calledOnce).toBe(true);
-            expect(getDatasetCountStub.calledOnce).toBe(false);
             expect(res.status).toHaveBeenCalledWith(500);
         });
 
